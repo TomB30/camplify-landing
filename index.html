@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <title>CampFlow - Summer Camp Management Software</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">CampFlow</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+        <div class="hero">
+            <h1>Where Camp Management Flows Naturally</h1>
+            <p>The complete CRM platform that transforms summer camp operations into seamless experiences</p>
+            <a href="#contact" class="cta-button">Request a Demo</a>
+        </div>
+        <div class="scroll-indicator">
+            <div>Discover More</div>
+            <div style="font-size: 24px;">↓</div>
+        </div>
+    </header>
+
+    <section class="features" id="features">
+        <div class="features-carousel">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Housing Management</h3>
+                    <p>Effortlessly assign cabins, track capacity, and manage accommodations for campers and staff with intelligent automation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎪</div>
+                    <h3>Programs & Activities</h3>
+                    <p>Plan, schedule, and coordinate all camp events and activities in one centralized, intuitive platform.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h3>Smart Scheduling</h3>
+                    <p>Create conflict-free schedules for activities, meals, and special events with AI-powered automation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Staff & Campers Management</h3>
+                    <p>Track staff availability, assignments, and performance metrics all in one comprehensive dashboard.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎖️</div>
+                    <h3>Roles & Certifications</h3>
+                    <p>Monitor staff certifications, training requirements, and role assignments with automated reminder systems.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Location Tracking</h3>
+                    <p>Map out your entire camp facility and manage location-based activities and resources with precision.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏕️</div>
+                    <h3>Session Management</h3>
+                    <p>Handle multiple camp sessions, registration periods, and camper enrollment seamlessly across all touchpoints.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Day-to-Day Operations</h3>
+                    <p>Streamline daily tasks, attendance tracking, meal planning, and operational workflows effortlessly.</p>
+                </div>
+            </div>
+            <div class="carousel-dots"></div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Built by Camp Lovers, for Camp Lovers</h2>
+                <p>We understand the unique challenges of running a summer camp because we've been there. CampFlow was born from years of firsthand experience managing camps and listening to directors, counselors, and administrators.</p>
+                <p>Our mission is simple: to help you spend less time on administrative tasks and more time creating magical summer memories. With CampFlow, camp management becomes as natural as a day by the lake.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Camps Using CampFlow</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Happy Campers</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80" alt="Happy campers">
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Let's Make This Summer Unforgettable</h2>
+        <div class="contact-form">
+            <div class="success-message" id="successMessage">
+                🎉 Thank you! We'll be in touch soon to schedule your personalized demo.
+            </div>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="campName">Camp Name</label>
+                    <input type="text" id="campName" name="campName">
+                </div>
+                <div class="form-group">
+                    <label for="message">Tell Us About Your Camp</label>
+                    <textarea id="message" name="message" placeholder="Number of campers, staff size, specific needs..."></textarea>
+                </div>
+                <button type="submit" class="submit-button">Request Demo</button>
+            </form>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 CampFlow. Making summer camp management simple, natural, and joyful.</p>
+    </footer>
+    <script src="./main.js"></script>
+</body>
+</html>
