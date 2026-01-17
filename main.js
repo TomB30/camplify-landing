@@ -39,27 +39,28 @@ document.querySelectorAll('.about-text, .about-image, .contact-form').forEach(el
     observer.observe(el);
 });
 
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        campName: document.getElementById('campName').value,
-        message: document.getElementById('message').value
-    };
-    
-    console.log('Form submitted:', formData);
-    
-    const successMsg = document.getElementById('successMessage');
-    successMsg.style.display = 'block';
-    document.getElementById('contactForm').reset();
-    
-    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  emailjs.sendForm(
+    "service_r4zai19",
+    "template_fk4es7i",
+    this,
+    "_CKSQY96Z3LPhmP6C"
+  ).then(() => {
+    const successMsg = document.getElementById("successMessage");
+    successMsg.style.display = "block";
+
+    this.reset();
+    successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
+
     setTimeout(() => {
-        successMsg.style.display = 'none';
+      successMsg.style.display = "none";
     }, 5000);
+  }).catch(error => {
+    alert("Failed to send message. Please try again.");
+    console.error(error);
+  });
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
