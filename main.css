@@ -333,7 +333,6 @@ body {
 }
 
 .feature-block:hover .feature-image img {
-    transform: translateY(-8px);
     box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.2);
 }
 
