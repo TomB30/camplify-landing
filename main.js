@@ -42,21 +42,28 @@ document.querySelectorAll('.about-text, .about-image, .contact-form').forEach(el
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  emailjs.sendForm(
-    "service_r4zai19",
-    "template_fk4es7i",
-    this,
-    "_CKSQY96Z3LPhmP6C"
-  ).then(() => {
-    const successMsg = document.getElementById("successMessage");
-    successMsg.style.display = "block";
+  const formData = new FormData(this);
 
-    this.reset();
-    successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
+  fetch("https://formspree.io/f/xlgggvna", {
+    method: "POST",
+    body: formData,
+    headers: {
+      "Accept": "application/json"
+    }
+  }).then(response => {
+    if (response.ok) {
+      const successMsg = document.getElementById("successMessage");
+      successMsg.style.display = "block";
 
-    setTimeout(() => {
-      successMsg.style.display = "none";
-    }, 5000);
+      this.reset();
+      successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
+
+      setTimeout(() => {
+        successMsg.style.display = "none";
+      }, 5000);
+    } else {
+      throw new Error("Form submission failed");
+    }
   }).catch(error => {
     alert("Failed to send message. Please try again.");
     console.error(error);
