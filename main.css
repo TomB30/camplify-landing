@@ -46,6 +46,26 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+    font-family: 'Opun Mai';
+    src: url('./fonts/OpunMai-Regular.woff2') format('woff2'),
+         url('./fonts/OpunMai-Regular.woff') format('woff'),
+         url('./fonts/OpunMai-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Opun Mai';
+    src: url('./fonts/OpunMai-Bold.woff2') format('woff2'),
+         url('./fonts/OpunMai-Bold.woff') format('woff'),
+         url('./fonts/OpunMai-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* ========================================
    Navigation
    ======================================== */
@@ -67,6 +87,7 @@ body {
 }
 
 .logo {
+    font-family: 'Opun Mai', sans-serif;
     font-size: 24px;
     font-weight: 700;
     color: var(--primary);
