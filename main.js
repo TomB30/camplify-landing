@@ -1,16 +1,39 @@
 // ========================================
-// Hero Slideshow
+// Hero Slideshow with Lazy Loading
 // ========================================
 const heroSlides = document.querySelectorAll('.hero-slide');
 let currentSlide = 0;
+
+// Lazy load background images for slideshow
+function loadSlideBackground(slide) {
+    const bgSrc = slide.getAttribute('data-bg-src');
+    if (bgSrc && !slide.getAttribute('data-bg-loaded')) {
+        const img = new Image();
+        img.onload = () => {
+            slide.style.backgroundImage = `url('${bgSrc}')`;
+            slide.setAttribute('data-bg-loaded', 'true');
+        };
+        img.src = bgSrc;
+    }
+}
+
+// Preload next slide when current slide is active
+function preloadNextSlide() {
+    const nextIndex = (currentSlide + 1) % heroSlides.length;
+    loadSlideBackground(heroSlides[nextIndex]);
+}
 
 function nextSlide() {
     heroSlides[currentSlide].classList.remove('active');
     currentSlide = (currentSlide + 1) % heroSlides.length;
     heroSlides[currentSlide].classList.add('active');
+    preloadNextSlide();
 }
 
-// Change slide every 15 seconds
+// Preload next slide initially
+preloadNextSlide();
+
+// Change slide every 10 seconds
 setInterval(nextSlide, 10000);
 
 // ========================================
@@ -53,13 +76,13 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   }).then(response => {
     if (response.ok) {
       const successMsg = document.getElementById("successMessage");
-      successMsg.style.display = "block";
+      successMsg.classList.add("show");
 
       this.reset();
       successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
 
       setTimeout(() => {
-        successMsg.style.display = "none";
+        successMsg.classList.remove("show");
       }, 5000);
     } else {
       throw new Error("Form submission failed");

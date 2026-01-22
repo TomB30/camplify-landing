@@ -27,14 +27,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./main.css">
+    <!-- Preload critical above-the-fold hero image -->
+    <link rel="preload" as="image" href="./media/people-around-fire.webp" fetchpriority="high">
     <title>Camplify - Summer Camp Management Software</title>
 </head>
 <body>
     <header class="header">
         <div class="hero-slideshow">
-            <div class="hero-slide active" style="background-image: url('./media/people-around-fire.webp')"></div>
-            <div class="hero-slide" style="background-image: url('./media/kids-slip-and-slide.webp')"></div>
-            <div class="hero-slide" style="background-image: url('./media/campers-cheer-for-music.webp')"></div>
+            <div class="hero-slide active" style="background-image: url('./media/people-around-fire.webp')" data-bg-loaded="true"></div>
+            <div class="hero-slide" data-bg-src="./media/kids-slip-and-slide.webp"></div>
+            <div class="hero-slide" data-bg-src="./media/campers-cheer-for-music.webp"></div>
         </div>
         <nav class="nav">
             <div class="logo">Camplify</div>
@@ -62,7 +64,7 @@
                 <p>Plan, schedule, and coordinate all camp events and activities in one centralized platform. Whether you organize by cabin base or camper choice, our auto-scheduler does the work for you. From arts and crafts to sports tournaments, manage every detail with smart automation and an intuitive interface that makes scheduling effortless.</p>
             </div>
             <div class="feature-image">
-                <img src="./media/camp-activities.webp" alt="Camp activities">
+                <img src="./media/camp-activities.webp" alt="Camp activities" width="800" height="534" loading="lazy" decoding="async">
             </div>
         </div>
 
@@ -72,7 +74,7 @@
                 <p>Effortlessly assign cabins, track capacity, and manage accommodations for campers and staff. Our intelligent automation handles room assignments, roommate preferences, and special needs — so you can focus on creating the perfect camp experience.</p>
             </div>
             <div class="feature-image">
-                <img src="./media/camp-cabins.webp" alt="Camp cabins">
+                <img src="./media/camp-cabins.webp" alt="Camp cabins" width="800" height="534" loading="lazy" decoding="async">
             </div>
         </div>
 
@@ -82,7 +84,14 @@
                 <p>Track staff availability, certifications, assignments, and schedules all in one comprehensive calendar. Everything you need to keep your camp running smoothly.</p>
             </div>
             <div class="feature-image">
-                <img src="./media/camp-staff-campers.webp" alt="Camp staff and campers">
+                <img src="./media/camp-staff-campers.webp" 
+                     srcset="./media/camp-staff-campers.webp 6720w"
+                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                     alt="Camp staff and campers" 
+                     width="6720" 
+                     height="4480" 
+                     loading="lazy" 
+                     decoding="async">
             </div>
         </div>
 
@@ -92,7 +101,14 @@
                 <p>Take control of daily operations with ease. Automate task management, attendance tracking, and meal planning while staying informed with real-time, customizable dashboards designed for busy camp directors.</p>
             </div>
             <div class="feature-image">
-                <img src="./media/camp-operations.webp" alt="Camp operations">
+                <img src="./media/camp-operations.webp" 
+                     srcset="./media/camp-operations.webp 6000w"
+                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                     alt="Camp operations" 
+                     width="6000" 
+                     height="3375" 
+                     loading="lazy" 
+                     decoding="async">
             </div>
         </div>
     </section>
@@ -103,7 +119,8 @@
                 <h2>Built by Camp Lovers, for Camp Lovers</h2>
                 <p>We understand the unique challenges of running a summer camp because we've been there. Camplify was born from years of firsthand experience managing camps and listening to directors, counselors, and administrators.</p>
                 <p>Our mission is simple: to help you spend less time on administrative tasks and more time creating magical summer memories. With Camplify, camp management becomes as natural as a day by the lake.</p>
-                <div class="stats">
+<!-- TODO: Add stats -->
+                <!-- <div class="stats">
                     <div class="stat">
                         <div class="stat-number">500+</div>
                         <div class="stat-label">Camps Using Camplify</div>
@@ -116,10 +133,10 @@
                         <div class="stat-number">98%</div>
                         <div class="stat-label">Satisfaction Rate</div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="about-image">
-                <img src="./media/happy-campers.webp" alt="Happy campers">
+                <img src="./media/happy-campers.webp" alt="Happy campers" width="4032" height="2877" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -128,7 +145,16 @@
         <h2 class="section-title">Let's Make This Summer Unforgettable</h2>
         <div class="contact-form">
             <div class="success-message" id="successMessage">
-                🎉 Thank you! We'll be in touch soon to schedule your personalized demo.
+                <div class="success-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M8 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="success-content">
+                    <div class="success-title">Thank you for your interest!</div>
+                    <div class="success-text">We've received your request and will be in touch soon to schedule your personalized demo.</div>
+                </div>
             </div>
             <form id="contactForm">
                 <div class="form-group">
