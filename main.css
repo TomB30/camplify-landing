@@ -439,18 +439,15 @@ body {
     font-family: ui-monospace, monospace;
 }
 
-/* Content area: slides fill entire area; aspect-ratio and max-height on content */
+/* Content area: height determined by image, no fixed height or aspect-ratio */
 .showcase-window-content {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 800 / 534;
-    max-height: min(65vh, 520px);
     background: var(--bg-white);
 }
 
 .showcase-slides {
-    position: absolute;
-    inset: 0;
+    position: relative;
     background: var(--bg-white);
 }
 
@@ -464,24 +461,26 @@ body {
 
 .showcase-slide {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     display: none;
     background: var(--bg-white);
 }
 
+/* Visible slide is in flow so container height = image height */
 #showcase-s1:checked ~ #showcase-slide-1,
 #showcase-s2:checked ~ #showcase-slide-2,
 #showcase-s3:checked ~ #showcase-slide-3 {
     display: block;
+    position: relative;
 }
 
-/* Fit full width of slide; no horizontal cut; may have space at bottom */
 .showcase-slide img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: top center;
+    height: auto;
     display: block;
+    vertical-align: bottom;
     background: var(--bg-white);
 }
 
@@ -529,10 +528,6 @@ body {
 
     .showcase-window-url {
         font-size: 11px;
-    }
-
-    .showcase-window-content {
-        max-height: min(55vh, 380px);
     }
 
     .showcase-fade {
