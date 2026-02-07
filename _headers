@@ -1,0 +1,21 @@
+# HTTP Cache Headers for Static Assets
+# This file is used by Netlify and Cloudflare Pages
+
+# Cache images for 1 year with immutable cache
+/media/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache CSS and JS for 1 year with immutable cache
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache fonts for 1 year with immutable cache
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML should be revalidated
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate

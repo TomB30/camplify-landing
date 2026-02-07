@@ -37,6 +37,26 @@ preloadNextSlide();
 setInterval(nextSlide, 10000);
 
 // ========================================
+// Hero headline: rotating word (soft fade, slower)
+// ========================================
+const heroRotatingWords = ['operations', 'schedule', 'activities', 'housing', 'management'];
+const heroWordEl = document.getElementById('hero-rotating-word');
+let heroWordIndex = 0;
+const heroWordIntervalMs = 4200;
+const heroWordFadeMs = 500;
+
+if (heroWordEl) {
+    setInterval(() => {
+        heroWordEl.classList.add('hero-rotating-word--out');
+        setTimeout(() => {
+            heroWordIndex = (heroWordIndex + 1) % heroRotatingWords.length;
+            heroWordEl.textContent = heroRotatingWords[heroWordIndex];
+            heroWordEl.classList.remove('hero-rotating-word--out');
+        }, heroWordFadeMs);
+    }, heroWordIntervalMs);
+}
+
+// ========================================
 // Intersection Observer for Animations
 // ========================================
 const observerOptions = {
