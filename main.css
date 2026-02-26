@@ -4,7 +4,7 @@
    ======================================== */
 
 :root {
-    --primary: #38B7FE;
+    --primary: #38b6ff;
     --primary-light: #5FC5FE;
     --primary-dark: #1E9DE8;
     --accent: #10B981;
@@ -408,7 +408,8 @@ body {
 
 .showcase-frame:has(#showcase-s1:checked) .showcase-tabs label[for="showcase-s1"],
 .showcase-frame:has(#showcase-s2:checked) .showcase-tabs label[for="showcase-s2"],
-.showcase-frame:has(#showcase-s3:checked) .showcase-tabs label[for="showcase-s3"] {
+.showcase-frame:has(#showcase-s3:checked) .showcase-tabs label[for="showcase-s3"],
+.showcase-frame:has(#showcase-s4:checked) .showcase-tabs label[for="showcase-s4"] {
     color: var(--primary);
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 0 1px 2px rgb(0 0 0 / 0.06);
@@ -471,7 +472,8 @@ body {
 /* Visible slide is in flow so container height = image height */
 #showcase-s1:checked ~ #showcase-slide-1,
 #showcase-s2:checked ~ #showcase-slide-2,
-#showcase-s3:checked ~ #showcase-slide-3 {
+#showcase-s3:checked ~ #showcase-slide-3,
+#showcase-s4:checked ~ #showcase-slide-4  {
     display: block;
     position: relative;
 }
