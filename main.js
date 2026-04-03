@@ -199,6 +199,76 @@ if (stickySection) {
     }, { passive: true });
 }
 
+// ========================================
+// Mobile Feature Cards
+// ========================================
+function buildMobileFeatures() {
+    const section = document.querySelector('.sticky-scroll-section');
+    if (!section) return;
+
+    const isMobile = window.innerWidth <= 768;
+
+    if (!isMobile) {
+        // Restore desktop layout if it was swapped
+        const mobileGrid = section.querySelector('.features-mobile');
+        const container = section.querySelector('.sticky-scroll-container');
+        if (mobileGrid) mobileGrid.remove();
+        if (container) container.style.display = '';
+        delete section.dataset.mobileDone;
+        return;
+    }
+
+    if (section.dataset.mobileDone) return;
+    section.dataset.mobileDone = 'true';
+
+    const textItems = section.querySelectorAll('.sticky-text-item');
+    const imageItems = section.querySelectorAll('.sticky-image-item');
+    const container = section.querySelector('.sticky-scroll-container');
+
+    const mobileGrid = document.createElement('div');
+    mobileGrid.className = 'features-mobile';
+
+    textItems.forEach((text, i) => {
+        const card = document.createElement('div');
+        card.className = 'feature-card-mobile';
+
+        const imgWrap = document.createElement('div');
+        imgWrap.className = 'feature-card-img';
+        imgWrap.innerHTML = imageItems[i] ? imageItems[i].innerHTML : '';
+
+        const textWrap = document.createElement('div');
+        textWrap.className = 'feature-card-text';
+        textWrap.innerHTML = text.innerHTML;
+
+        card.appendChild(imgWrap);
+        card.appendChild(textWrap);
+        mobileGrid.appendChild(card);
+    });
+
+    if (container) container.style.display = 'none';
+    section.appendChild(mobileGrid);
+
+    // Fade-in cards as they scroll into view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    mobileGrid.querySelectorAll('.feature-card-mobile').forEach(card => observer.observe(card));
+}
+
+buildMobileFeatures();
+
+let resizeTimer;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(buildMobileFeatures, 200);
+});
+
 let lastScrollY = window.scrollY;
 // window.addEventListener('scroll', () => {
 //     const currentScrollY = window.scrollY;
