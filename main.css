@@ -604,11 +604,16 @@ body {
     }
 
     .showcase-window-bar {
-        padding: 10px 12px;
+        flex-wrap: wrap;
+        padding: 8px 12px 0;
+        gap: 8px;
+        row-gap: 0;
     }
 
     .showcase-window-url {
         font-size: 11px;
+        flex: 1;
+        text-align: center;
     }
 
     .showcase-fade {
@@ -617,11 +622,28 @@ body {
 
     .showcase-tabs {
         gap: 0;
+        width: 100%;
+        justify-content: space-evenly;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        margin-top: 4px;
+        margin-left: 0;
     }
 
     .showcase-tab {
-        padding: 5px 10px;
+        flex: 1;
+        text-align: center;
+        padding: 6px 4px;
         font-size: 11px;
+    }
+}
+
+@media (max-width: 400px) {
+    .showcase-window-url {
+        display: none;
+    }
+
+    .showcase-window-dots {
+        margin-right: auto;
     }
 }
 
