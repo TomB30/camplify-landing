@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./main.css" />
+    <script src="./layout.js" defer></script>
     <title>Terms of Use - Camplify</title>
     <style>
         .privacy-container {
@@ -100,14 +101,7 @@
     </style>
 </head>
 <body>
-    <nav class="nav">
-        <div class="logo"><a href="./index.html" style="text-decoration: none; color: inherit;">Camplify</a></div>
-        <div class="nav-links">
-            <a href="./index.html#features">Features</a>
-            <a href="./index.html#about">About</a>
-            <a href="./index.html#contact">Contact</a>
-        </div>
-    </nav>
+    <div id="nav-root"></div>
 
     <div class="privacy-container">
         <a href="./index.html" class="back-link">← Back to Home</a>
@@ -385,14 +379,7 @@
         </div>
     </div>
 
-    <footer class="footer">
-        <p>&copy; 2026 Camplify LLC. Making camp management simple.</p>
-        <p style="margin-top: 16px; font-size: 13px;">
-            <a href="./privacy-policy.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: underline;">Privacy Policy</a>
-            <span style="margin: 0 8px;">|</span>
-            <a href="./terms-of-use.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: underline;">Terms of Use</a>
-        </p>
-    </footer>
+    <div id="footer-root"></div>
     <script src="./main.js"></script>
 </body>
 </html>

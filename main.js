@@ -123,6 +123,82 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// ========================================
+// FAQ Accordion — smooth animation, one open at a time
+// ========================================
+const faqItems = document.querySelectorAll('.faq-item');
+
+function closeItem(item) {
+    const answer = item.querySelector('.faq-answer');
+    // Pin exact height (in case max-height is 'none'), disable transition momentarily
+    answer.style.transition = 'none';
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+    answer.offsetHeight; // force reflow so the browser registers the pinned value
+    // Now animate to 0
+    answer.style.transition = '';
+    answer.style.maxHeight = '0px';
+    item.classList.remove('is-open');
+    answer.addEventListener('transitionend', () => {
+        item.removeAttribute('open');
+    }, { once: true });
+}
+
+function openItem(item) {
+    item.setAttribute('open', '');
+    item.classList.add('is-open');
+    const answer = item.querySelector('.faq-answer');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+    // Once open, lift the fixed height so content can reflow freely
+    answer.addEventListener('transitionend', () => {
+        if (item.hasAttribute('open')) answer.style.maxHeight = 'none';
+    }, { once: true });
+}
+
+faqItems.forEach(item => {
+    const summary = item.querySelector('.faq-question');
+    summary.addEventListener('click', e => {
+        e.preventDefault();
+        const isOpen = item.hasAttribute('open');
+
+        // Close any other open item first
+        faqItems.forEach(other => {
+            if (other !== item && other.hasAttribute('open')) closeItem(other);
+        });
+
+        isOpen ? closeItem(item) : openItem(item);
+    });
+});
+
+// ========================================
+// Sticky Feature Scroll
+// ========================================
+const stickySection = document.querySelector('.sticky-scroll-section');
+if (stickySection) {
+    const textItems = stickySection.querySelectorAll('.sticky-text-item');
+    const imageItems = stickySection.querySelectorAll('.sticky-image-item');
+    const dots = stickySection.querySelectorAll('.sticky-dot');
+    const count = textItems.length;
+    let currentIndex = 0;
+
+    function setActive(index) {
+        if (index === currentIndex) return;
+        currentIndex = index;
+        textItems.forEach((el, i) => el.classList.toggle('active', i === index));
+        imageItems.forEach((el, i) => el.classList.toggle('active', i === index));
+        dots.forEach((el, i) => el.classList.toggle('active', i === index));
+    }
+
+    window.addEventListener('scroll', () => {
+        const rect = stickySection.getBoundingClientRect();
+        const scrolled = -rect.top;
+        const scrollable = stickySection.offsetHeight - window.innerHeight;
+        if (scrollable <= 0) return;
+        const progress = Math.max(0, Math.min(1, scrolled / scrollable));
+        const index = Math.min(Math.floor(progress * count), count - 1);
+        setActive(index);
+    }, { passive: true });
+}
+
 let lastScrollY = window.scrollY;
 // window.addEventListener('scroll', () => {
 //     const currentScrollY = window.scrollY;

@@ -28,6 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./main.css">
     <link rel="icon" href="./media/camplify-icon-48x48.ico" type="image/x-icon">
+    <script src="./layout.js" defer></script>
     <!-- Preload critical above-the-fold hero image -->
     <link rel="preload" as="image" href="./media/people-around-fire.webp" fetchpriority="high">
     <title>Camplify - Summer Camp Management Software</title>
@@ -39,25 +40,29 @@
             <div class="hero-slide" data-bg-src="./media/kids-slip-and-slide.webp"></div>
             <div class="hero-slide" data-bg-src="./media/campers-cheer-for-music.webp"></div>
         </div>
-        <nav class="nav">
-            <div class="logo">
-                <img
-                  src="./media/camplify-logo-500x200.svg"
-                  alt="Camplify"
-                  class="logo-image"
-                />
-            </div>
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
+        <div id="nav-root"></div>
         <div class="hero">
             <h1><span class="hero-headline-static">Simplify camp</span><br><span id="hero-rotating-word" class="hero-rotating-word" aria-live="polite">management</span></h1>
             <p>The complete management platform that transforms summer camp operations into seamless experiences</p>
             <a href="#contact" class="cta-button">Request a Demo</a>
             <div class="showcase-backdrop hero-showcase-backdrop">
+
+                <!-- Floating info cards -->
+                <div class="floating-card float-tr">
+                    <div class="fc-dot fc-dot--green"></div>
+                    <div>
+                        <div class="fc-title">Auto-schedule ready</div>
+                        <div class="fc-sub">35 Groups &middot; 847 activities assigned</div>
+                    </div>
+                </div>
+
+                <div class="floating-card float-bl">
+                    <div>
+                        <div class="fc-stat-value">1,623</div>
+                        <div class="fc-stat-label">Lunch participants today</div>
+                    </div>
+                </div>
+
                 <div class="showcase-frame">
                     <div class="showcase-window">
                         <div class="showcase-window-bar">
@@ -97,59 +102,54 @@
         </div>
     </header>
 
-    <section class="features" id="features">
-        <div class="feature-block">
-          <div class="feature-content">
-              <h2>Programs & activities in one place</h2>
-                <p>Plan, schedule, and coordinate all camp events and activities in one centralized platform. Whether you organize by cabin base or camper choice, our auto-scheduler does the work for you. From arts and crafts to sports tournaments, manage every detail with smart automation and an intuitive interface that makes scheduling effortless.</p>
-            </div>
-            <div class="feature-image">
-                <img src="./media/camp-activities.webp" alt="Camp activities" width="800" height="534" loading="lazy" decoding="async">
-            </div>
-        </div>
+    <!-- Sticky Feature Scroll: all 4 features -->
+    <section class="sticky-scroll-section" id="features">
+        <div class="sticky-scroll-container">
 
-        <div class="feature-block reverse">
-            <div class="feature-content">
-                <h2>Housing & accommodation made easy</h2>
-                <p>Effortlessly assign cabins, track capacity, and manage accommodations for campers and staff. Our intelligent automation handles room assignments, roommate preferences, and special needs — so you can focus on creating the perfect camp experience.</p>
+            <!-- Left: sticky text panel -->
+            <div class="sticky-scroll-left">
+                <div class="sticky-text-items">
+                    <div class="sticky-text-item active" data-index="0">
+                        <h2>Activities & events in one place</h2>
+                        <p>Plan, schedule, and coordinate all camp events and activities in one centralized platform. Whether you organize by cabin base or camper choice, our auto-scheduler does the work for you. From arts and crafts to sports tournaments, manage every detail with smart automation and an intuitive interface that makes scheduling effortless.</p>
+                    </div>
+                    <div class="sticky-text-item" data-index="1">
+                        <h2>Housing & accommodation made easy</h2>
+                        <p>Effortlessly assign cabins, track capacity, and manage accommodations for campers and staff. Our intelligent automation handles room assignments, roommate preferences, and special needs — so you can focus on creating the perfect camp experience.</p>
+                    </div>
+                    <div class="sticky-text-item" data-index="2">
+                        <h2>Staff & camper management</h2>
+                        <p>Track staff availability, certifications, assignments, and schedules all in one comprehensive calendar. Everything you need to keep your camp running smoothly.</p>
+                    </div>
+                    <div class="sticky-text-item" data-index="3">
+                        <h2>Day-to-day operations simplified</h2>
+                        <p>Take control of daily operations with ease. Automate task management, attendance tracking, and meal planning while staying informed with real-time, customizable dashboards designed for busy camp directors.</p>
+                    </div>
+                </div>
+                <div class="sticky-progress" aria-hidden="true">
+                    <span class="sticky-dot active" data-index="0"></span>
+                    <span class="sticky-dot" data-index="1"></span>
+                    <span class="sticky-dot" data-index="2"></span>
+                    <span class="sticky-dot" data-index="3"></span>
+                </div>
             </div>
-            <div class="feature-image">
-                <img src="./media/camp-cabins.webp" alt="Camp cabins" width="800" height="534" loading="lazy" decoding="async">
-            </div>
-        </div>
 
-        <div class="feature-block">
-            <div class="feature-content">
-                <h2>Staff & camper management</h2>
-                <p>Track staff availability, certifications, assignments, and schedules all in one comprehensive calendar. Everything you need to keep your camp running smoothly.</p>
+            <!-- Right: crossfading image panel -->
+            <div class="sticky-scroll-right">
+                <div class="sticky-image-item active" data-index="0">
+                    <img src="./media/camp-activities.webp" alt="Camp activities" width="800" height="534" loading="lazy" decoding="async">
+                </div>
+                <div class="sticky-image-item" data-index="1">
+                    <img src="./media/camp-cabins.webp" alt="Camp cabins" width="800" height="534" loading="lazy" decoding="async">
+                </div>
+                <div class="sticky-image-item" data-index="2">
+                    <img src="./media/camp-staff-campers.webp" alt="Camp staff and campers" width="6720" height="4480" loading="lazy" decoding="async">
+                </div>
+                <div class="sticky-image-item" data-index="3">
+                    <img src="./media/camp-operations.webp" alt="Camp operations" width="6000" height="3375" loading="lazy" decoding="async">
+                </div>
             </div>
-            <div class="feature-image">
-                <img src="./media/camp-staff-campers.webp" 
-                     srcset="./media/camp-staff-campers.webp 6720w"
-                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                     alt="Camp staff and campers" 
-                     width="6720" 
-                     height="4480" 
-                     loading="lazy" 
-                     decoding="async">
-            </div>
-        </div>
 
-        <div class="feature-block reverse">
-            <div class="feature-content">
-                <h2>Day-to-day operations simplified</h2>
-                <p>Take control of daily operations with ease. Automate task management, attendance tracking, and meal planning while staying informed with real-time, customizable dashboards designed for busy camp directors.</p>
-            </div>
-            <div class="feature-image">
-                <img src="./media/camp-operations.webp" 
-                     srcset="./media/camp-operations.webp 6000w"
-                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                     alt="Camp operations" 
-                     width="6000" 
-                     height="3375" 
-                     loading="lazy" 
-                     decoding="async">
-            </div>
         </div>
     </section>
 
@@ -181,8 +181,83 @@
         </div>
     </section>
 
+    <section class="faq-section" id="faq">
+        <div class="faq-inner">
+            <div class="faq-header">
+                <span class="faq-label">FAQs</span>
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about Camplify. Still have questions? <a href="#contact">Drop us a message</a>.</p>
+            </div>
+            <div class="faq-list">
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        How does the auto-scheduling feature work?
+                        <span class="faq-icon"></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Camplify's auto-scheduler analyzes your programs, staff availability, camper preferences, and facility constraints to automatically generate conflict-free schedules. You choose the scheduling mode — cabin-based or camper-choice — and our engine handles the rest in seconds.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Can Camplify handle both day camps and overnight camps?
+                        <span class="faq-icon"></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Yes. Camplify is built to support both day camp and overnight camp operations. Whether you need housing assignments, meal planning, and overnight supervision tools, or just daily activity scheduling and attendance, the platform adapts to your camp's structure.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Can I manage multiple programs and sessions simultaneously?
+                        <span class="faq-icon"></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Absolutely. Camplify supports multiple concurrent sessions, age groups, and programs within a single account. You can switch between sessions easily and view a customized dashboard that gives you a real-time overview of all active operations.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        How are camper and staff records kept secure?
+                        <span class="faq-icon"></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Security is a top priority. All data is encrypted in transit and at rest. We follow enterprise-grade security standards, enforce role-based access controls, and never sell or share your data with third parties. Your campers' information stays private.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        Does Camplify support calendar export and reporting?
+                        <span class="faq-icon"></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Yes. You can export your full camp calendar to Excel or PDF. Camplify also includes customizable dashboards with real-time metrics on attendance, participation, meal counts, and more — so directors always have the data they need.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">
+                        How do I get started with Camplify?
+                        <span class="faq-icon"></span>
+                    </summary>
+                    <div class="faq-answer">
+                        <p>Getting started is easy. Request a demo using the form below and our team will set up a personalized walkthrough tailored to your camp's size and needs. Onboarding is guided and straightforward — most camps are fully set up within a day.</p>
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
     <section class="contact-section" id="contact">
+        <div class="contact-section-inner">
         <h2 class="section-title">Let's Make This Summer Unforgettable</h2>
+        <p class="contact-subtitle">Leave your details and we'll get back to you shortly.</p>
         <div class="contact-form">
             <div class="success-message" id="successMessage">
                 <div class="success-icon">
@@ -213,22 +288,16 @@
                     <label for="message">Tell Us About Your Camp</label>
                     <textarea id="message" name="message" placeholder="Number of campers, staff size, specific needs..."></textarea>
                 </div>
-                <button type="submit" class="submit-button">Request Demo</button>
+                <button type="submit" class="submit-button">Submit</button>
                 <p style="text-align: center; margin-top: 16px; font-size: 13px; color: var(--text-muted);">
                     By submitting this form, you agree to our <a href="./privacy-policy.html" style="color: var(--primary); text-decoration: underline;">Privacy Policy</a>
                 </p>
             </form>
         </div>
+        </div>
     </section>
 
-    <footer class="footer">
-        <p>&copy; 2026 Camplify LLC. Making summer camp management simple, natural, and joyful.</p>
-        <p style="margin-top: 16px; font-size: 13px;">
-            <a href="./privacy-policy.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: underline;">Privacy Policy</a>
-            <span style="margin: 0 8px;">|</span>
-            <a href="./terms-of-use.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: underline;">Terms of Use</a>
-        </p>
-    </footer>
+    <div id="footer-root"></div>
     <script src="./main.js"></script>
 </body>
 </html>
