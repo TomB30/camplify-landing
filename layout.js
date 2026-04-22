@@ -23,6 +23,7 @@
         </div>
     </div>
     <div class="nav-right">
+        <a href="https://app.camplify.app/" class="nav-btn-secondary nav-btn-desktop-only">Login</a>
         <a href="https://cal.com/camplify/30min" class="nav-btn-primary nav-btn-desktop-only">Schedule a Demo</a>
         <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -54,7 +55,7 @@
         </nav>
         <div class="mobile-menu-ctas">
             <a href="https://cal.com/camplify/30min" class="mobile-cta-primary">Schedule a Demo &rsaquo;</a>
-            <!-- <a href="#" class="mobile-cta-secondary">Login</a> -->
+            <a href="https://app.camplify.app/" class="mobile-cta-secondary">Login</a>
         </div>
     </div>
 </div>`;

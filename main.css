@@ -108,20 +108,25 @@ body {
 }
 
 .nav-btn-secondary {
-    padding: 8px 16px;
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 18px;
     border-radius: var(--radius-full);
     font-size: 14px;
-    font-weight: 500;
-    color: var(--text-medium);
+    font-weight: 600;
+    color: var(--primary);
     text-decoration: none;
-    border: 1px solid var(--border);
+    border: 1.5px solid var(--primary);
+    box-sizing: border-box;
+    height: 36px;
     transition: all 0.2s ease;
 }
 
 .nav-btn-secondary:hover {
     color: var(--primary);
     border-color: var(--primary);
-    background: rgba(56, 183, 254, 0.04);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 183, 254, 0.25);
 }
 
 .nav-btn-primary {
@@ -137,6 +142,8 @@ body {
     background: var(--text-dark);
     transition: all 0.2s ease;
     letter-spacing: 0.01em;
+    box-sizing: border-box;
+    height: 36px;
 }
 
 .nav-btn-primary:hover {
