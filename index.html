@@ -5,23 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Camplify is the complete camp management platform. Manage scheduling, activities, staff, campers, housing and daily operations all in one platform.">
-    <meta name="keywords" content="camplify, summer camp software, camp management, camp CRM, camp registration, camp scheduling">
+    <meta name="description" content="Camplify is summer camp management software for directors and administrators. Schedule activities, manage housing, staff, and campers — for day camps and overnight camps.">
     <meta name="author" content="Camplify LLC">
     
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Camplify - Camp Management Software">
+    <meta property="og:title" content="Camplify - Summer Camp Management Software">
     <meta property="og:description" content="The complete platform that transforms summer camp operations into seamless experiences.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://camplify.app">
+    <meta property="og:url" content="https://camplify.app/">
+    <meta property="og:image" content="https://camplify.app/media/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Camplify - Summer Camp Management Software">
     <meta name="twitter:description" content="The complete platform that transforms summer camp operations into seamless experiences.">
+    <meta name="twitter:image" content="https://camplify.app/media/og-image.jpg">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://camplify.app">
+    <link rel="canonical" href="https://camplify.app/">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,6 +35,99 @@
     <!-- Preload critical above-the-fold hero image -->
     <link rel="preload" as="image" href="./media/people-around-fire.webp" fetchpriority="high">
     <title>Camplify - Summer Camp Management Software</title>
+
+    <!-- Analytics: uncomment ONE option after setup (see README or deploy guide) -->
+    <!-- Plausible: <script defer data-domain="camplify.app" src="https://plausible.io/js/script.js"></script> -->
+    <!-- GA4: <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+    <!-- GA4: <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "Camplify",
+          "legalName": "Camplify LLC",
+          "url": "https://camplify.app/",
+          "logo": "https://camplify.app/media/camplify-logo-500x200.svg",
+          "email": "contact@camplify.app",
+          "description": "Summer camp management software for scheduling, housing, staff, and daily operations."
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Camplify",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "url": "https://camplify.app/",
+          "description": "Camp management platform for scheduling activities, housing assignments, staff and camper management, and daily camp operations.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Contact for pricing and demo"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Camplify LLC"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does the auto-scheduling feature work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Camplify's auto-scheduler analyzes your programs, staff availability, camper preferences, and facility constraints to automatically generate conflict-free schedules. You choose the scheduling mode — cabin-based or camper-choice — and our engine handles the rest in seconds."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can Camplify handle both day camps and overnight camps?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Camplify is built to support both day camp and overnight camp operations. Whether you need housing assignments, meal planning, and overnight supervision tools, or just daily activity scheduling and attendance, the platform adapts to your camp's structure."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I manage multiple programs and sessions simultaneously?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. Camplify supports multiple concurrent sessions, age groups, and programs within a single account. You can switch between sessions easily and view a customized dashboard that gives you a real-time overview of all active operations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How are camper and staff records kept secure?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Security is a top priority. All data is encrypted in transit and at rest. We follow enterprise-grade security standards, enforce role-based access controls, and never sell or share your data with third parties. Your campers' information stays private."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Camplify support calendar export and reporting?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. You can export your full camp calendar to Excel or PDF. Camplify also includes customizable dashboards with real-time metrics on attendance, participation, meal counts, and more — so directors always have the data they need."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I get started with Camplify?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Getting started is easy. Schedule a demo using the button above and our team will set up a personalized walkthrough tailored to your camp's size and needs. Onboarding is guided and straightforward — most camps are fully set up within a day."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <header class="header">
@@ -40,10 +136,34 @@
             <div class="hero-slide" data-bg-src="./media/kids-slip-and-slide.webp"></div>
             <div class="hero-slide" data-bg-src="./media/campers-cheer-for-music.webp"></div>
         </div>
-        <div id="nav-root"></div>
+        <nav class="nav">
+            <div class="nav-left">
+                <div class="logo">
+                    <a href="https://camplify.app">
+                        <img src="./media/camplify-logo-500x200.svg" alt="Camplify" class="logo-image" />
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#about">About</a>
+                    <a href="#faq">FAQs</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <a href="https://app.camplify.app/" class="nav-btn-secondary nav-btn-desktop-only">Login</a>
+                <a href="https://cal.com/camplify/30min" class="nav-btn-primary nav-btn-desktop-only">Schedule a Demo</a>
+                <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="4" x2="20" y1="6" y2="6"/>
+                        <line x1="4" x2="20" y1="12" y2="12"/>
+                        <line x1="4" x2="20" y1="18" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
         <div class="hero">
-            <h1><span class="hero-headline-static">Simplify camp</span><br><span id="hero-rotating-word" class="hero-rotating-word" aria-live="polite">management</span></h1>
-            <p>The complete management platform that transforms summer camp operations into seamless experiences</p>
+            <h1><span class="sr-only">Summer camp management software — </span><span class="hero-headline-static">Simplify camp</span><br><span id="hero-rotating-word" class="hero-rotating-word" aria-live="polite">management</span></h1>
+            <p>Camp director software that simplifies scheduling, housing, staff, and daily operations for day camps and overnight camps.</p>
             <a href="https://cal.com/camplify/30min" class="cta-button">Get started</a>
             <div class="showcase-backdrop hero-showcase-backdrop">
 
@@ -143,10 +263,10 @@
                     <img src="./media/camp-cabins.webp" alt="Camp cabins" width="800" height="534" loading="lazy" decoding="async">
                 </div>
                 <div class="sticky-image-item" data-index="2">
-                    <img src="./media/camp-staff-campers.webp" alt="Camp staff and campers" width="6720" height="4480" loading="lazy" decoding="async">
+                    <img src="./media/camp-staff-campers.webp" alt="Camp staff and campers" width="1600" height="1066" loading="lazy" decoding="async">
                 </div>
                 <div class="sticky-image-item" data-index="3">
-                    <img src="./media/camp-operations.webp" alt="Camp operations" width="6000" height="3375" loading="lazy" decoding="async">
+                    <img src="./media/camp-operations.webp" alt="Camp operations" width="1600" height="900" loading="lazy" decoding="async">
                 </div>
             </div>
 
@@ -176,7 +296,7 @@
                 </div> -->
             </div>
             <div class="about-image">
-                <img src="./media/happy-campers.webp" alt="Happy campers" width="4032" height="2877" loading="lazy" decoding="async">
+                <img src="./media/happy-campers.webp" alt="Happy campers" width="1600" height="1141" loading="lazy" decoding="async">
             </div>
         </div>
     </section>
@@ -290,14 +410,64 @@
                 </div>
                 <button type="submit" class="submit-button">Submit</button>
                 <p style="text-align: center; margin-top: 16px; font-size: 13px; color: var(--text-muted);">
-                    By submitting this form, you agree to our <a href="./privacy-policy.html" style="color: var(--primary); text-decoration: underline;">Privacy Policy</a>
+                    By submitting this form, you agree to our <a href="/privacy-policy/" style="color: var(--primary); text-decoration: underline;">Privacy Policy</a>
                 </p>
             </form>
         </div>
         </div>
     </section>
 
-    <div id="footer-root"></div>
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="https://camplify.app">
+                    <img src="./media/camplify-logo-500x200.svg" alt="Camplify" class="footer-logo">
+                </a>
+                <p class="footer-tagline">Making summer camp management<br>simple, natural, and joyful.</p>
+            </div>
+            <div class="footer-nav">
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Product</h4>
+                    <a href="#features" class="footer-link">Features</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Legal</h4>
+                    <a href="/privacy-policy/" class="footer-link">Privacy Policy</a>
+                    <a href="/terms-of-use/" class="footer-link">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Camplify LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <div class="mobile-menu-card">
+            <div class="mobile-menu-header">
+                <a href="https://camplify.app">
+                    <img src="./media/camplify-logo-500x200.svg" alt="Camplify" class="logo-image" />
+                </a>
+                <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <nav class="mobile-menu-links">
+                <a href="#features" class="mobile-menu-link">Features</a>
+                <a href="#about" class="mobile-menu-link">About</a>
+                <a href="#faq" class="mobile-menu-link">FAQs</a>
+            </nav>
+            <div class="mobile-menu-ctas">
+                <a href="https://cal.com/camplify/30min" class="mobile-cta-primary">Schedule a Demo &rsaquo;</a>
+                <a href="https://app.camplify.app/" class="mobile-cta-secondary">Login</a>
+            </div>
+        </div>
+    </div>
+
     <script src="./main.js"></script>
 </body>
 </html>

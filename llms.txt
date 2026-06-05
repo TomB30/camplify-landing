@@ -1,0 +1,32 @@
+# Camplify
+
+> Summer camp management software for camp directors and administrators.
+
+Camplify (https://camplify.app) is a web-based camp management platform built by Camplify LLC. It helps summer camps, day camps, and overnight camps manage scheduling, housing, staff, campers, and daily operations in one place.
+
+## What Camplify does
+
+- Auto-schedules camp activities and programs (cabin-based or camper-choice modes)
+- Manages housing and cabin assignments
+- Tracks staff availability, certifications, and schedules
+- Handles camper records and group management
+- Provides dashboards, calendar export, and daily operations tools
+
+## Who it's for
+
+Camp directors, administrators, and operations staff at day camps and overnight summer camps in the United States and internationally.
+
+## Key pages
+
+- Homepage: https://camplify.app/
+- Privacy Policy: https://camplify.app/privacy-policy/
+- Terms of Use: https://camplify.app/terms-of-use/
+
+## Contact
+
+- Email: contact@camplify.app
+- Demo: https://cal.com/camplify/30min
+
+## Brand note
+
+Camplify (camplify.app) is summer camp management software. It is not related to camplify.com.au (RV rental) or camplify.com.sg (Singapore kids' camps).
