@@ -7,9 +7,11 @@ Camplify (https://camplify.app) is a web-based camp management platform built by
 ## What Camplify does
 
 - Auto-schedules camp activities and programs (cabin-based or camper-choice modes)
+- Manages activities with time blocks, locations, staff, and capacity
 - Manages housing and cabin assignments
 - Tracks staff availability, certifications, and schedules
-- Handles camper records and group management
+- Handles camper records, group assignments, and allergy/dietary visibility so staff know who's coming, where they are, and what they need
+- Tracks vehicle and driver assignments so camps can run a leaner fleet
 - Provides dashboards, calendar export, and daily operations tools
 
 ## Who it's for
@@ -25,7 +27,7 @@ Camp directors, administrators, and operations staff at day camps and overnight 
 ## Contact
 
 - Email: contact@camplify.app
-- Demo: https://cal.com/camplify/30min
+- Contact: https://camplify.app/#contact
 
 ## Brand note
 

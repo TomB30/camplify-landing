@@ -30,10 +30,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./main.css?v=33">
     <link rel="icon" href="./media/camplify-icon-48x48.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="./media/apple-touch-icon.png">
-    <script src="./layout.js" defer></script>
+    <script src="./layout.js?v=4" defer></script>
     <!-- Preload critical above-the-fold hero image -->
     <link rel="preload" as="image" href="./media/people-around-fire.webp" fetchpriority="high">
     <title>Camplify - Summer Camp Management Software</title>
@@ -151,7 +151,6 @@
             </div>
             <div class="nav-right">
                 <a href="https://app.camplify.app/" class="nav-btn-secondary nav-btn-desktop-only">Login</a>
-                <!-- <a href="https://cal.com/camplify/30min" class="nav-btn-primary nav-btn-desktop-only">Schedule a Demo</a> -->
                 <a href="#contact" class="nav-btn-primary nav-btn-desktop-only">Contact Us</a>
                 <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -163,60 +162,33 @@
             </div>
         </nav>
         <div class="hero">
-            <h1><span class="sr-only">Summer camp management software — </span><span class="hero-headline-static">Simplify camp</span><br><span id="hero-rotating-word" class="hero-rotating-word" aria-live="polite">management</span></h1>
-            <p>Camp director software that simplifies scheduling, housing, staff, and daily operations for day camps and overnight camps.</p>
-            <!-- <a href="https://cal.com/camplify/30min" class="cta-button">Get started</a> -->
-            <a href="#contact" class="cta-button">Contact Us</a>
+            <div class="hero-copy">
+                <h1><span class="sr-only">Summer camp management software — </span><span class="hero-headline-static">Simplify camp</span><br><span id="hero-rotating-word" class="hero-rotating-word" aria-live="polite">management</span></h1>
+                <p>Camp director software that simplifies scheduling, housing, staff, and daily operations for day camps and overnight camps.</p>
+                <a href="#contact" class="cta-button">Contact Us</a>
+            </div>
             <div class="showcase-backdrop hero-showcase-backdrop">
-
-                <!-- Floating info cards -->
-                <!-- <div class="floating-card float-tr">
-                    <div class="fc-dot fc-dot--green"></div>
-                    <div>
-                        <div class="fc-title">Auto-schedule ready</div>
-                        <div class="fc-sub">35 Groups &middot; 847 activities assigned</div>
-                    </div>
-                </div>
-
-                <div class="floating-card float-bl">
-                    <div>
-                        <div class="fc-title">Conflicts</div>
-                        <div class="fc-sub">9 conflicts found</div>
-                    </div>
-                </div> -->
-
-                <div class="showcase-frame">
-                    <div class="showcase-window">
-                        <div class="showcase-window-bar">
-                            <span class="showcase-window-dots"></span>
-                            <span class="showcase-window-url">camplify.app</span>
-                            <div class="showcase-tabs" aria-label="Choose screenshot">
-                                <label for="showcase-s1" class="showcase-tab">Dashboard</label>
-                                <label for="showcase-s2" class="showcase-tab">Calendar</label>
-                                <label for="showcase-s3" class="showcase-tab">Programs</label>
-                                <label for="showcase-s4" class="showcase-tab">Groups</label>
+                <div class="showcase-duo">
+                    <div class="showcase-frame">
+                        <div class="showcase-window">
+                            <div class="showcase-window-bar">
+                                <div class="showcase-window-dots" aria-hidden="true">
+                                    <span class="tl-close"></span>
+                                    <span class="tl-min"></span>
+                                    <span class="tl-zoom"></span>
+                                </div>
+                            </div>
+                            <div class="showcase-window-content">
+                                <img src="./media/camplify-dashboard.webp?v=2" alt="Camplify Dashboard on desktop — meals, birthdays, and camp-wide schedule" width="1024" height="522" decoding="async">
+                                <div class="showcase-fade" aria-hidden="true"></div>
                             </div>
                         </div>
-                        <div class="showcase-window-content">
-                            <div class="showcase-slides">
-                                <input type="radio" name="showcase-slide" id="showcase-s1" value="1" checked class="showcase-input">
-                                <input type="radio" name="showcase-slide" id="showcase-s2" value="2" class="showcase-input">
-                                <input type="radio" name="showcase-slide" id="showcase-s3" value="3" class="showcase-input">
-                                <input type="radio" name="showcase-slide" id="showcase-s4" value="4" class="showcase-input">
-                                <div class="showcase-slide" id="showcase-slide-1">
-                                <img src="./media/camplify-dashboard.webp" alt="Camplify Dashboard — overview of camp operations" width="800" height="534" loading="lazy" decoding="async">
-                                </div>
-                                <div class="showcase-slide" id="showcase-slide-2">
-                                    <img src="./media/camplify-calendar.webp" alt="Camplify Calendar — scheduling view" width="800" height="534" loading="lazy" decoding="async">
-                                </div>
-                                <div class="showcase-slide" id="showcase-slide-3">
-                                    <img src="./media/camplify-programs.webp" alt="Camplify Programs — activities and scheduling" width="800" height="534" loading="lazy" decoding="async">
-                                </div>
-                                <div class="showcase-slide" id="showcase-slide-4">
-                                    <img src="./media/camplify-groups.webp" alt="Camplify Groups — campers and housing" width="800" height="534" loading="lazy" decoding="async">
-                                </div>
+                    </div>
+                    <div class="showcase-phone">
+                        <div class="showcase-phone-bezel">
+                            <div class="showcase-phone-screen">
+                                <img src="./media/camplify-mobile-calendar.webp?v=2" alt="Camplify on mobile — daily calendar for Sunday, Jul 26, 2026" width="496" height="1024" decoding="async">
                             </div>
-                            <div class="showcase-fade" aria-hidden="true"></div>
                         </div>
                     </div>
                 </div>
@@ -224,55 +196,660 @@
         </div>
     </header>
 
-    <!-- Sticky Feature Scroll: all 4 features -->
-    <section class="sticky-scroll-section" id="features">
-        <div class="sticky-scroll-container">
+    <section class="features-wrap" id="features">
 
-            <!-- Left: sticky text panel -->
-            <div class="sticky-scroll-left">
-                <div class="sticky-text-items">
-                    <div class="sticky-text-item active" data-index="0">
-                        <h2>Activities & events in one place</h2>
-                        <p>Plan, schedule, and coordinate all camp events and activities in one centralized platform. Whether you organize by cabin base or camper choice, our auto-scheduler does the work for you. From arts and crafts to sports tournaments, manage every detail with smart automation and an intuitive interface that makes scheduling effortless.</p>
+        <div class="sticky-scroll-section">
+            <div class="sticky-scroll-container">
+
+                <div class="sticky-scroll-left">
+                    <div class="sticky-text-items">
+                        <div class="sticky-text-item active" data-index="0">
+                            <span class="feature-eyebrow">Auto scheduling</span>
+                            <h2>Choose groups and activities. Get a full schedule in seconds.</h2>
+                            <p>Pick the groups, the activities, and the time blocks. Camplify builds a conflict-aware camp schedule automatically — so directors stop dragging events around and start the season ready.</p>
+                        </div>
+                        <div class="sticky-text-item" data-index="1">
+                            <span class="feature-eyebrow">Electives</span>
+                            <h2>Manage camper-choice activities with smart assignments.</h2>
+                            <p>Run ranked-choice rounds, scan submissions quickly, and commit assignments in one place. Camplify turns camper preferences into a clean, reviewable schedule without the spreadsheet scramble.</p>
+                        </div>
+                        <div class="sticky-text-item" data-index="2">
+                            <span class="feature-eyebrow">Programs</span>
+                            <h2>Tailor the uniqueness of your camp.</h2>
+                            <p>Set up the programs, staff, and places that make your camp yours — then Camplify schedules around that mix, not a generic template.</p>
+                        </div>
                     </div>
-                    <div class="sticky-text-item" data-index="1">
-                        <h2>Housing & accommodation made easy</h2>
-                        <p>Effortlessly assign cabins, track capacity, and manage accommodations for campers and staff. Our intelligent automation handles room assignments, roommate preferences, and special needs — so you can focus on creating the perfect camp experience.</p>
-                    </div>
-                    <div class="sticky-text-item" data-index="2">
-                        <h2>Staff & camper management</h2>
-                        <p>Track staff availability, certifications, assignments, and schedules all in one comprehensive calendar. Everything you need to keep your camp running smoothly.</p>
-                    </div>
-                    <div class="sticky-text-item" data-index="3">
-                        <h2>Day-to-day operations simplified</h2>
-                        <p>Take control of daily operations with ease. Automate task management, attendance tracking, and meal planning while staying informed with real-time, customizable dashboards designed for busy camp directors.</p>
+                    <div class="sticky-progress" aria-hidden="true">
+                        <span class="sticky-dot active" data-index="0"></span>
+                        <span class="sticky-dot" data-index="1"></span>
+                        <span class="sticky-dot" data-index="2"></span>
                     </div>
                 </div>
-                <div class="sticky-progress" aria-hidden="true">
-                    <span class="sticky-dot active" data-index="0"></span>
-                    <span class="sticky-dot" data-index="1"></span>
-                    <span class="sticky-dot" data-index="2"></span>
-                    <span class="sticky-dot" data-index="3"></span>
+
+                <div class="sticky-scroll-right">
+                    <div class="sticky-image-item sticky-image-item--preview active" data-index="0" role="img" aria-label="Camplify auto-scheduler: group configurations with activities, time blocks, and limits">
+                        <div class="app-preview scheduler-ui" aria-hidden="true">
+                            <div class="scheduler-head">
+                                <div>
+                                    <div class="scheduler-name">CBMX</div>
+                                    <div class="scheduler-meta">11 groups · 12 activities · 7 time blocks · 12 max-occurrence caps</div>
+                                </div>
+                            </div>
+                            <div class="scheduler-filters">
+                                <div class="scheduler-field">
+                                    <div class="scheduler-field-label">Groups</div>
+                                    <div class="scheduler-chips">
+                                        <span class="scheduler-chip">XA1 - 1st Session <i>×</i></span>
+                                        <span class="scheduler-chip">XA2 - 1st Session <i>×</i></span>
+                                        <span class="scheduler-more">+8 more</span>
+                                    </div>
+                                </div>
+                                <div class="scheduler-field">
+                                    <div class="scheduler-field-label">Activities</div>
+                                    <div class="scheduler-chips">
+                                        <span class="scheduler-chip">(Arts &amp; Crafts) General A&amp;C <i>×</i></span>
+                                        <span class="scheduler-more">+10 more</span>
+                                    </div>
+                                </div>
+                                <div class="scheduler-field">
+                                    <div class="scheduler-field-label">Time Blocks</div>
+                                    <div class="scheduler-chips">
+                                        <span class="scheduler-chip">Activity 1 (09:15-10:15) <i>×</i></span>
+                                        <span class="scheduler-more">+5 more</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="scheduler-toggle-row">
+                                <div class="scheduler-toggle">
+                                    <span>Cap (max)</span>
+                                    <span class="is-on">Target</span>
+                                </div>
+                                <span class="scheduler-toggle-hint">Activity limits — per group (optional)</span>
+                            </div>
+                            <div class="scheduler-grid">
+                                <div class="scheduler-card">
+                                    <div class="scheduler-card-name"><span class="scheduler-dot" style="background:#8b5cf6"></span>(Arts &amp; Crafts) General A&amp;C</div>
+                                    <div class="scheduler-inputs">
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">↻</span>1<span class="scheduler-input-x">×</span></div>
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">▦</span>No repeat gap<span class="scheduler-input-suffix">days</span></div>
+                                    </div>
+                                </div>
+                                <div class="scheduler-card">
+                                    <div class="scheduler-card-name"><span class="scheduler-dot" style="background:#8b5cf6"></span>(Arts &amp; Crafts) Tie Dye</div>
+                                    <div class="scheduler-inputs">
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">↻</span>1<span class="scheduler-input-x">×</span></div>
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">▦</span>No repeat gap<span class="scheduler-input-suffix">days</span></div>
+                                    </div>
+                                </div>
+                                <div class="scheduler-card">
+                                    <div class="scheduler-card-name"><span class="scheduler-dot" style="background:#ec4899"></span>(Camper Kitchen) Cooking</div>
+                                    <div class="scheduler-inputs">
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">↻</span>2<span class="scheduler-input-x">×</span></div>
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">▦</span>7<span class="scheduler-input-suffix">days</span></div>
+                                    </div>
+                                </div>
+                                <div class="scheduler-card">
+                                    <div class="scheduler-card-name"><span class="scheduler-dot" style="background:#ef4444"></span>(Dance) Dance</div>
+                                    <div class="scheduler-inputs">
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">↻</span>1<span class="scheduler-input-x">×</span></div>
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">▦</span>No repeat gap<span class="scheduler-input-suffix">days</span></div>
+                                    </div>
+                                </div>
+                                <div class="scheduler-card">
+                                    <div class="scheduler-card-name"><span class="scheduler-dot" style="background:#a16207"></span>(Horseback) Barn Experience</div>
+                                    <div class="scheduler-inputs">
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">↻</span>1<span class="scheduler-input-x">×</span></div>
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">▦</span>No repeat gap<span class="scheduler-input-suffix">days</span></div>
+                                    </div>
+                                </div>
+                                <div class="scheduler-card">
+                                    <div class="scheduler-card-name"><span class="scheduler-dot" style="background:#111827"></span>(Media) Karaoke</div>
+                                    <div class="scheduler-inputs">
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">↻</span>1<span class="scheduler-input-x">×</span></div>
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">▦</span>No repeat gap<span class="scheduler-input-suffix">days</span></div>
+                                    </div>
+                                </div>
+                                <div class="scheduler-card">
+                                    <div class="scheduler-card-name"><span class="scheduler-dot" style="background:#22c55e"></span>(Nature) GI</div>
+                                    <div class="scheduler-inputs">
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">↻</span>1<span class="scheduler-input-x">×</span></div>
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">▦</span>No repeat gap<span class="scheduler-input-suffix">days</span></div>
+                                    </div>
+                                </div>
+                                <div class="scheduler-card">
+                                    <div class="scheduler-card-name"><span class="scheduler-dot" style="background:#f97316"></span>(Sport) Basketball</div>
+                                    <div class="scheduler-inputs">
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">↻</span>2<span class="scheduler-input-x">×</span></div>
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">▦</span>5<span class="scheduler-input-suffix">days</span></div>
+                                    </div>
+                                </div>
+                                <div class="scheduler-card">
+                                    <div class="scheduler-card-name"><span class="scheduler-dot" style="background:#eab308"></span>(Theatre) Theatre Games</div>
+                                    <div class="scheduler-inputs">
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">↻</span>2<span class="scheduler-input-x">×</span></div>
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">▦</span>10<span class="scheduler-input-suffix">days</span></div>
+                                    </div>
+                                </div>
+                                <div class="scheduler-card">
+                                    <div class="scheduler-card-name"><span class="scheduler-dot" style="background:#14b8a6"></span>(Waterfront) Hurricane</div>
+                                    <div class="scheduler-inputs">
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">↻</span>1<span class="scheduler-input-x">×</span></div>
+                                        <div class="scheduler-input"><span class="scheduler-input-ico">▦</span>No repeat gap<span class="scheduler-input-suffix">days</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sticky-image-item sticky-image-item--preview" data-index="1" role="img" aria-label="Camplify electives round setup: ranked choices, assignment slots, and scheduled days">
+                        <div class="electives-ui" aria-hidden="true">
+                            <div class="electives-status">
+                                <span class="electives-status-label">Status</span>
+                                <span class="electives-status-badge">Draft</span>
+                            </div>
+                            <div class="electives-block">
+                                <div class="electives-heading">Round setup</div>
+                                <div class="electives-metrics">
+                                    <div class="electives-metric">
+                                        <span class="electives-metric-value">5</span>
+                                        <span class="electives-metric-label">Ranked choices per camper</span>
+                                    </div>
+                                    <div class="electives-metric">
+                                        <span class="electives-metric-value">1</span>
+                                        <span class="electives-metric-label">Assignment slots per day</span>
+                                    </div>
+                                    <div class="electives-metric">
+                                        <span class="electives-metric-value">4</span>
+                                        <span class="electives-metric-label">Scheduled days</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="electives-block">
+                                <div class="electives-heading">Schedule</div>
+                                <div class="electives-days">
+                                    <div class="electives-day">
+                                        <div class="electives-day-date">Wednesday, June 17, 2026</div>
+                                        <span class="electives-chip">Activity 3</span>
+                                    </div>
+                                    <div class="electives-day">
+                                        <div class="electives-day-date">Thursday, June 18, 2026</div>
+                                        <span class="electives-chip">Activity 3 (Before Lunch)</span>
+                                    </div>
+                                    <div class="electives-day">
+                                        <div class="electives-day-date">Friday, June 19, 2026</div>
+                                        <span class="electives-chip">Activity 3</span>
+                                    </div>
+                                    <div class="electives-day">
+                                        <div class="electives-day-date">Tuesday, June 23, 2026</div>
+                                        <span class="electives-chip">Activity 3 (Before Lunch)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sticky-image-item sticky-image-item--preview" data-index="2" role="img" aria-label="Camplify programs grid: Arts and Crafts, Cabin Time, CampWide, and more">
+                        <div class="app-preview programs-ui" aria-hidden="true">
+                            <div class="programs-head">
+                                <div class="programs-title">
+                                    Programs
+                                    <span class="programs-info" title="Info">i</span>
+                                </div>
+                                <div class="programs-add">
+                                    <span>+ Program</span>
+                                    <span class="programs-add-caret">▾</span>
+                                </div>
+                            </div>
+                            <div class="programs-toolbar">
+                                <div class="programs-search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                                    Search by name...
+                                </div>
+                                <span class="programs-filter">+ Filter</span>
+                                <div class="programs-views">
+                                    <span class="programs-view">☰</span>
+                                    <span class="programs-view is-on">⊞</span>
+                                </div>
+                            </div>
+                            <div class="programs-grid">
+                                <div class="program-card">
+                                    <div class="program-card-top">
+                                        <span class="program-icon" style="background:#7c3aed">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="13.5" cy="6.5" r="2"/><circle cx="17.5" cy="10.5" r="2"/><circle cx="8.5" cy="7.5" r="2"/><circle cx="6.5" cy="12.5" r="2"/><path d="M12 22a8 8 0 0 1-8-8c0-3 2-5 4-6 2 4 6 6 10 6 0 3-1.5 5-3 6-1 1-2 2-3 2z"/></svg>
+                                        </span>
+                                        <span class="program-name">Arts &amp; Crafts</span>
+                                        <span class="program-check"></span>
+                                    </div>
+                                    <div class="program-stats">
+                                        <span><svg viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg> 55</span>
+                                        <span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="10" r="2"/><path d="M8 16c.8-1.3 2.3-2 4-2s3.2.7 4 2"/></svg> 12</span>
+                                        <span><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> 6</span>
+                                    </div>
+                                </div>
+                                <div class="program-card">
+                                    <div class="program-card-top">
+                                        <span class="program-icon" style="background:#14b8a6">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 20 12 4l8 16"/><path d="M8 14h8"/></svg>
+                                        </span>
+                                        <span class="program-name">Cabin Time</span>
+                                        <span class="program-check"></span>
+                                    </div>
+                                    <div class="program-stats">
+                                        <span><svg viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg> 8</span>
+                                        <span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="10" r="2"/><path d="M8 16c.8-1.3 2.3-2 4-2s3.2.7 4 2"/></svg> 0</span>
+                                        <span><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> 0</span>
+                                    </div>
+                                </div>
+                                <div class="program-card">
+                                    <div class="program-card-top">
+                                        <span class="program-icon" style="background:#d946ef">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20 7 22"/><path d="M14 14.66V17c0 .47.33.89.76 1.12.54.3 1.24.88 1.24 1.88"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+                                        </span>
+                                        <span class="program-name">CampWide</span>
+                                        <span class="program-check"></span>
+                                    </div>
+                                    <div class="program-stats">
+                                        <span><svg viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg> 18</span>
+                                        <span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="10" r="2"/><path d="M8 16c.8-1.3 2.3-2 4-2s3.2.7 4 2"/></svg> 0</span>
+                                        <span><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> 0</span>
+                                    </div>
+                                </div>
+                                <div class="program-card">
+                                    <div class="program-card-top">
+                                        <span class="program-icon" style="background:#06b6d4">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+                                        </span>
+                                        <span class="program-name">Communication</span>
+                                        <span class="program-check"></span>
+                                    </div>
+                                    <div class="program-stats">
+                                        <span><svg viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg> 1</span>
+                                        <span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="10" r="2"/><path d="M8 16c.8-1.3 2.3-2 4-2s3.2.7 4 2"/></svg> 0</span>
+                                        <span><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> 0</span>
+                                    </div>
+                                </div>
+                                <div class="program-card">
+                                    <div class="program-card-top">
+                                        <span class="program-icon" style="background:#ef4444">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M5.8 11.3 2 22l10.7-3.79"/><path d="M4 3h.01"/><path d="M22 8h.01"/><path d="M15 2h.01"/><path d="M22 20h.01"/><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10"/><path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17"/><path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7"/><path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z"/></svg>
+                                        </span>
+                                        <span class="program-name">Dance</span>
+                                        <span class="program-check"></span>
+                                    </div>
+                                    <div class="program-stats">
+                                        <span><svg viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg> 1</span>
+                                        <span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="10" r="2"/><path d="M8 16c.8-1.3 2.3-2 4-2s3.2.7 4 2"/></svg> 2</span>
+                                        <span><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> 1</span>
+                                    </div>
+                                </div>
+                                <div class="program-card">
+                                    <div class="program-card-top">
+                                        <span class="program-icon" style="background:#84cc16">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="7.5" cy="15.5" r="5.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/></svg>
+                                        </span>
+                                        <span class="program-name">Facilities</span>
+                                        <span class="program-check"></span>
+                                    </div>
+                                    <div class="program-stats">
+                                        <span><svg viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg> 0</span>
+                                        <span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="10" r="2"/><path d="M8 16c.8-1.3 2.3-2 4-2s3.2.7 4 2"/></svg> 0</span>
+                                        <span><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> 0</span>
+                                    </div>
+                                </div>
+                                <div class="program-card">
+                                    <div class="program-card-top">
+                                        <span class="program-icon" style="background:#64748b">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+                                        </span>
+                                        <span class="program-name">General</span>
+                                        <span class="program-check"></span>
+                                    </div>
+                                    <div class="program-stats">
+                                        <span><svg viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg> 11</span>
+                                        <span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="10" r="2"/><path d="M8 16c.8-1.3 2.3-2 4-2s3.2.7 4 2"/></svg> 0</span>
+                                        <span><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> 0</span>
+                                    </div>
+                                </div>
+                                <div class="program-card">
+                                    <div class="program-card-top">
+                                        <span class="program-icon" style="background:#ec4899">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/></svg>
+                                        </span>
+                                        <span class="program-name">Health Center</span>
+                                        <span class="program-check"></span>
+                                    </div>
+                                    <div class="program-stats">
+                                        <span><svg viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg> 2</span>
+                                        <span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="10" r="2"/><path d="M8 16c.8-1.3 2.3-2 4-2s3.2.7 4 2"/></svg> 0</span>
+                                        <span><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> 0</span>
+                                    </div>
+                                </div>
+                                <div class="program-card">
+                                    <div class="program-card-top">
+                                        <span class="program-icon" style="background:#92400e">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="m2 16 8-8"/><path d="M3.5 10.5 8 6"/><path d="M16 2v6h6"/><path d="m10 14 8 8"/><circle cx="16" cy="16" r="2"/></svg>
+                                        </span>
+                                        <span class="program-name">Horseback</span>
+                                        <span class="program-check"></span>
+                                    </div>
+                                    <div class="program-stats">
+                                        <span><svg viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg> 10</span>
+                                        <span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="10" r="2"/><path d="M8 16c.8-1.3 2.3-2 4-2s3.2.7 4 2"/></svg> 7</span>
+                                        <span><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> 3</span>
+                                    </div>
+                                </div>
+                                <div class="program-card">
+                                    <div class="program-card-top">
+                                        <span class="program-icon" style="background:#16a34a">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3c.3 2.5-1 4.5-3 6 3 .5 5 2.5 5 5.5 0 2.5-1.8 4.5-4 5.5"/><path d="M12 3c-.3 2.5 1 4.5 3 6-3 .5-5 2.5-5 5.5 0 2.5 1.8 4.5 4 5.5"/><path d="M8 14c1.5 0 3 .8 4 2"/><path d="M9 9c.8.3 1.7.8 2.4 1.5"/></svg>
+                                        </span>
+                                        <span class="program-name">Nature</span>
+                                        <span class="program-check"></span>
+                                    </div>
+                                    <div class="program-stats">
+                                        <span><svg viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg> 50</span>
+                                        <span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="10" r="2"/><path d="M8 16c.8-1.3 2.3-2 4-2s3.2.7 4 2"/></svg> 23</span>
+                                        <span><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> 15</span>
+                                    </div>
+                                </div>
+                                <div class="program-card">
+                                    <div class="program-card-top">
+                                        <span class="program-icon" style="background:#ea580c">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 1 0 20"/><path d="M12 2a10 10 0 0 0 0 20"/><path d="M2 12h20"/><path d="M12 2v20"/></svg>
+                                        </span>
+                                        <span class="program-name">Sport</span>
+                                        <span class="program-check"></span>
+                                    </div>
+                                    <div class="program-stats">
+                                        <span><svg viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg> 55</span>
+                                        <span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="10" r="2"/><path d="M8 16c.8-1.3 2.3-2 4-2s3.2.7 4 2"/></svg> 8</span>
+                                        <span><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> 16</span>
+                                    </div>
+                                </div>
+                                <div class="program-card">
+                                    <div class="program-card-top">
+                                        <span class="program-icon" style="background:#0d9488">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
+                                        </span>
+                                        <span class="program-name">Waterfront</span>
+                                        <span class="program-check"></span>
+                                    </div>
+                                    <div class="program-stats">
+                                        <span><svg viewBox="0 0 24 24"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg> 38</span>
+                                        <span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="10" r="2"/><path d="M8 16c.8-1.3 2.3-2 4-2s3.2.7 4 2"/></svg> 22</span>
+                                        <span><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg> 10</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
-
-            <!-- Right: crossfading image panel -->
-            <div class="sticky-scroll-right">
-                <div class="sticky-image-item active" data-index="0">
-                    <img src="./media/camp-activities.webp" alt="Camp activities" width="800" height="534" loading="lazy" decoding="async">
-                </div>
-                <div class="sticky-image-item" data-index="1">
-                    <img src="./media/camp-cabins.webp" alt="Camp cabins" width="800" height="534" loading="lazy" decoding="async">
-                </div>
-                <div class="sticky-image-item" data-index="2">
-                    <img src="./media/camp-staff-campers.webp" alt="Camp staff and campers" width="1600" height="1066" loading="lazy" decoding="async">
-                </div>
-                <div class="sticky-image-item" data-index="3">
-                    <img src="./media/camp-operations.webp" alt="Camp operations" width="1600" height="900" loading="lazy" decoding="async">
-                </div>
-            </div>
-
         </div>
+
+        <div class="features-bento-section">
+            <div class="features-bento-inner">
+                <div class="features-bento-header">
+                    <span class="feature-eyebrow">More tools</span>
+                    <h2>Everything else, in one place</h2>
+                </div>
+
+                <div class="features-bento">
+                    <article class="bento-card bento-card--preview bento-card--wide">
+                        <div class="bento-card-copy">
+                            <h3>Activities</h3>
+                            <p>Manage time blocks, locations, staff, and capacity in one place.</p>
+                        </div>
+                        <div class="bento-app" aria-hidden="true">
+                            <div class="bento-activity-list">
+                                <div class="bento-activity-card">
+                                    <div>
+                                        <div class="bento-activity-name">9 Square</div>
+                                        <div class="bento-activity-meta">
+                                            <span class="bento-activity-meta-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+                                                9 time blocks
+                                            </span>
+                                            <span class="bento-activity-meta-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                                                JBF - 9 Square
+                                            </span>
+                                            <span class="bento-activity-meta-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                                1 staff position
+                                            </span>
+                                            <span class="bento-activity-meta-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+                                                Max 30 participants
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <span class="bento-activity-remove">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                                    </span>
+                                </div>
+                                <div class="bento-activity-card">
+                                    <div>
+                                        <div class="bento-activity-name">Archery</div>
+                                        <div class="bento-activity-meta">
+                                            <span class="bento-activity-meta-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+                                                8 time blocks
+                                            </span>
+                                            <span class="bento-activity-meta-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                                                Halpern Center - Archery
+                                            </span>
+                                            <span class="bento-activity-meta-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                                2 staff positions
+                                            </span>
+                                            <span class="bento-activity-meta-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+                                                Max 20 participants
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <span class="bento-activity-remove">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                                    </span>
+                                </div>
+                                <div class="bento-activity-card">
+                                    <div>
+                                        <div class="bento-activity-name">Basketball</div>
+                                        <div class="bento-activity-meta">
+                                            <span class="bento-activity-meta-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/></svg>
+                                                9 time blocks
+                                            </span>
+                                            <span class="bento-activity-meta-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                                                2 locations
+                                            </span>
+                                            <span class="bento-activity-meta-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                                                2 staff positions
+                                            </span>
+                                            <span class="bento-activity-meta-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+                                                Max 30 participants
+                                            </span>
+                                            <span class="bento-activity-meta-item">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.91a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>
+                                                Up to 2 concurrent activity events
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <span class="bento-activity-remove">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bento-card bento-card--ui">
+                        <div class="bento-card-copy">
+                            <h3>Calendar</h3>
+                            <p>Every group, activity, and location on one week view.</p>
+                        </div>
+                        <img src="./media/camplify-calendar.webp" alt="Camplify weekly calendar" width="1024" height="522" loading="lazy" decoding="async">
+                    </article>
+
+                    <article class="bento-card bento-card--photo">
+                        <img src="./media/camp-staff-campers.webp" alt="Camp staff and campers together outdoors" width="1600" height="1066" loading="lazy" decoding="async">
+                        <div class="bento-card-copy">
+                            <h3>Staff &amp; campers</h3>
+                            <p>Availability, assignments, and records in one roster.</p>
+                        </div>
+                    </article>
+
+                    <article class="bento-card bento-card--preview">
+                        <div class="bento-card-copy">
+                            <h3>Live roster</h3>
+                            <p>See who's coming, who's with them, and what they need.</p>
+                        </div>
+                        <div class="bento-app" aria-hidden="true">
+                            <div class="bento-app-section">
+                                <div class="bento-app-label">Assigned Groups</div>
+                                <div class="bento-app-groups">
+                                    <div class="bento-app-group">
+                                        <span class="bento-app-group-name">T1</span>
+                                        <span class="bento-app-group-counts">
+                                            <span class="bento-app-count">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8"/><path d="M12 2v7"/><rect width="16" height="13" x="4" y="9" rx="2"/><circle cx="12" cy="15" r="2"/></svg>
+                                                3
+                                            </span>
+                                            <span class="bento-app-count">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+                                                9
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bento-app-chevron"><path d="m9 18 6-6-6-6"/></svg>
+                                        </span>
+                                    </div>
+                                    <div class="bento-app-group">
+                                        <span class="bento-app-group-name">T2</span>
+                                        <span class="bento-app-group-counts">
+                                            <span class="bento-app-count">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8"/><path d="M12 2v7"/><rect width="16" height="13" x="4" y="9" rx="2"/><circle cx="12" cy="15" r="2"/></svg>
+                                                3
+                                            </span>
+                                            <span class="bento-app-count">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+                                                12
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bento-app-chevron"><path d="m9 18 6-6-6-6"/></svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <p class="bento-app-footnote"><strong>Total participants:</strong> 21 campers, 6 staff members</p>
+                            </div>
+                            <div class="bento-app-expand">
+                                <span class="bento-app-label">Allergies &amp; Dietaries</span>
+                                <span class="bento-app-preview">12 allergies, 4 dietaries</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bento-app-chevron"><path d="m6 9 6 6 6-6"/></svg>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bento-card bento-card--preview bento-card--vehicles">
+                        <div class="bento-card-copy">
+                            <h3>Vehicles</h3>
+                            <p>See who's driving what — then cut the trips that don't need to happen.</p>
+                        </div>
+                        <div class="bento-app" aria-hidden="true">
+                            <div class="bento-app-section">
+                                <div class="bento-app-label">Vehicles</div>
+                                <div class="bento-app-slots">
+                                    <div class="bento-app-slot">
+                                        <div class="bento-app-slot-top">
+                                            <span class="bento-app-slot-name">Activity Bus</span>
+                                            <span class="bento-app-slot-meta">Transportation · Hannah Cohen</span>
+                                        </div>
+                                        <div class="bento-app-slot-fleet">Fleet: 15 Passenger Van #2</div>
+                                    </div>
+                                    <div class="bento-app-slot">
+                                        <div class="bento-app-slot-top">
+                                            <span class="bento-app-slot-name">Activity Bus</span>
+                                            <span class="bento-app-slot-meta">Transportation · Mike Wolff</span>
+                                        </div>
+                                        <div class="bento-app-slot-fleet">Fleet: 15 Passenger Van #1</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bento-card bento-card--preview bento-card--bar">
+                        <div class="bento-card-copy">
+                            <h3>Housing</h3>
+                            <p>See every cabin at a glance — capacity, bathrooms, and village.</p>
+                        </div>
+                        <div class="bento-app" aria-hidden="true">
+                            <div class="bento-housing-card">
+                                <span class="bento-housing-check"></span>
+                                <div class="bento-housing-header">
+                                    <div class="bento-housing-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>
+                                    </div>
+                                    <div class="bento-housing-name">Cabin 16A</div>
+                                </div>
+                                <div class="bento-housing-stats">
+                                    <span class="bento-housing-stat">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>
+                                        12
+                                    </span>
+                                    <span class="bento-housing-stat">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 12h13a1 1 0 0 1 1 1 5 5 0 0 1-5 5h-.598a.5.5 0 0 0-.424.765l1.544 2.47a.5.5 0 0 1-.424.765H5.402a.5.5 0 0 1-.424-.765L6.522 18.765A.5.5 0 0 0 6.098 18H6a5 5 0 0 1-5-5 1 1 0 0 1 1-1h1"/><path d="M8 12V6a4 4 0 0 1 8 0v6"/></svg>
+                                        Private Bathroom
+                                    </span>
+                                    <span class="bento-housing-stat">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                                        Village 1
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="bento-card bento-card--stat bento-card--bar">
+                        <div class="bento-card-copy">
+                            <h3>Daily ops</h3>
+                            <p>Live counts for meals, programs, and coverage.</p>
+                        </div>
+                        <div class="bento-stat">
+                            <span class="bento-stat-value">912</span>
+                            <span class="bento-stat-label">dinner participants</span>
+                            <span class="bento-stat-pill">Live</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-integrations">
+            <div class="features-integrations-inner">
+                <div class="features-integrations-copy">
+                    <span class="feature-eyebrow">Integrations</span>
+                    <h2>Connect the tools your camp already uses.</h2>
+                    <p>Camplify is built to sit at the center of camp operations.</p>
+                </div>
+                <div class="integration-orbit">
+                    <div class="integration-tile" data-slot="1" title="Campminder">
+                        <img src="./media/campminder-logo.webp" alt="Campminder" width="200" height="200" loading="lazy" decoding="async">
+                    </div>
+                    <div class="integration-tile" data-slot="2" title="Google Calendar">
+                        <img src="./media/google-calendar-logo.webp" alt="Google Calendar" width="256" height="256" loading="lazy" decoding="async">
+                    </div>
+                    <div class="integration-tile" data-slot="3" title="Apple Calendar">
+                        <img src="./media/apple-calendar-logo.webp?v=3" alt="Apple Calendar" width="256" height="256" loading="lazy" decoding="async">
+                    </div>
+                    <div class="integration-tile integration-tile--empty" data-slot="4" aria-hidden="true"></div>
+                    <div class="integration-tile integration-tile--empty" data-slot="5" aria-hidden="true"></div>
+                    <div class="integration-tile integration-tile--empty" data-slot="6" aria-hidden="true"></div>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <section class="about-section" id="about">
@@ -281,21 +858,6 @@
                 <h2>Built by Camp Lovers, for Camp Lovers</h2>
                 <p>We understand the unique challenges of running a summer camp because we've been there. Camplify was born from years of firsthand experience managing camps and listening to directors, counselors, and administrators.</p>
                 <p>Our mission is simple: to help you spend less time on administrative tasks and more time creating magical summer memories. With Camplify, camp management becomes as natural as a day by the lake.</p>
-<!-- TODO: Add stats -->
-                <!-- <div class="stats">
-                    <div class="stat">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Camps Using Camplify</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">50K+</div>
-                        <div class="stat-label">Happy Campers</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Satisfaction Rate</div>
-                    </div>
-                </div> -->
             </div>
             <div class="about-image">
                 <img src="./media/happy-campers.webp" alt="Happy campers" width="1600" height="1141" loading="lazy" decoding="async">
@@ -390,30 +952,29 @@
                 </div>
                 <div class="success-content">
                     <div class="success-title">Thank you for your interest!</div>
-                    <!-- <div class="success-text">We've received your request and will be in touch soon to schedule your personalized demo.</div> -->
                     <div class="success-text">We've received your request and will be in touch soon.</div>
                 </div>
             </div>
-            <form id="contactForm">
+            <form id="contactForm" action="https://formspree.io/f/xlgggvna" method="POST">
                 <div class="form-group">
                     <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" autocomplete="name" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
                 </div>
                 <div class="form-group">
                     <label for="campName">Camp Name</label>
-                    <input type="text" id="campName" name="campName">
+                    <input type="text" id="campName" name="campName" autocomplete="organization">
                 </div>
                 <div class="form-group">
                     <label for="message">Tell Us About Your Camp</label>
                     <textarea id="message" name="message" placeholder="Number of campers, staff size, specific needs..."></textarea>
                 </div>
                 <button type="submit" class="submit-button">Submit</button>
-                <p style="text-align: center; margin-top: 16px; font-size: 13px; color: var(--text-muted);">
-                    By submitting this form, you agree to our <a href="/privacy-policy/" style="color: var(--primary); text-decoration: underline;">Privacy Policy</a>
+                <p class="form-legal">
+                    By submitting this form, you agree to our <a href="/privacy-policy/">Privacy Policy</a>
                 </p>
             </form>
         </div>
@@ -433,6 +994,7 @@
                     <h4 class="footer-col-heading">Product</h4>
                     <a href="#features" class="footer-link">Features</a>
                     <a href="#about" class="footer-link">About</a>
+                    <a href="#faq" class="footer-link">FAQs</a>
                     <a href="#contact" class="footer-link">Contact</a>
                 </div>
                 <div class="footer-col">
@@ -465,13 +1027,12 @@
                 <a href="#faq" class="mobile-menu-link">FAQs</a>
             </nav>
             <div class="mobile-menu-ctas">
-                <!-- <a href="https://cal.com/camplify/30min" class="mobile-cta-primary">Schedule a Demo &rsaquo;</a> -->
                 <a href="#contact" class="mobile-cta-primary">Contact Us &rsaquo;</a>
                 <a href="https://app.camplify.app/" class="mobile-cta-secondary">Login</a>
             </div>
         </div>
     </div>
 
-    <script src="./main.js"></script>
+    <script src="./main.js?v=2"></script>
 </body>
 </html>
