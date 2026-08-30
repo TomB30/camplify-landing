@@ -154,12 +154,36 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.logo-image {
-    width: 110px;
-    height: auto;
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    margin-left: 6px;
+    margin-right: 14px;
+}
+
+.logo-img {
+    height: 36px;
+    width: auto;
     display: block;
-    margin-left: 15px;
-    margin-right: 15px;
+    flex-shrink: 0;
+    transform: translateY(1px);
+}
+
+.logo-mark {
+    width: 36px;
+    height: 36px;
+    display: block;
+    flex-shrink: 0;
+}
+
+.logo-wordmark {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--text-dark);
+    line-height: 1;
 }
 
 .nav-links {
@@ -2649,21 +2673,22 @@ body {
 }
 
 .footer-brand a {
-    display: inline-block;
-    line-height: 0;
+    display: inline-flex;
+    line-height: 1;
 }
 
-.footer-logo {
-    width: 160px;
-    height: auto;
-    display: block;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
-    transition: opacity 0.2s ease;
+.footer .logo-link {
+    margin: 0;
 }
 
-.footer-brand a:hover .footer-logo {
-    opacity: 1;
+.footer .logo-mark {
+    width: 40px;
+    height: 40px;
+}
+
+.footer .logo-wordmark {
+    color: #fff;
+    font-size: 20px;
 }
 
 .footer-tagline {
@@ -2903,6 +2928,10 @@ body {
 }
 
 @media (max-width: 768px) {
+    .logo-img {
+        height: 32px;
+    }
+
     .nav {
         top: 10px;
         left: 16px;
