@@ -179,7 +179,7 @@ faqItems.forEach(item => {
 });
 
 // ========================================
-// Sticky Feature Scroll
+// Sticky Feature Scroll (desktop) / stacked reveal (mobile)
 // ========================================
 const stickySection = document.querySelector('.sticky-scroll-section');
 if (stickySection) {
@@ -187,6 +187,7 @@ if (stickySection) {
     const imageItems = stickySection.querySelectorAll('.sticky-image-item');
     const dots = stickySection.querySelectorAll('.sticky-dot');
     const count = textItems.length;
+    const desktopStickyMq = window.matchMedia('(min-width: 769px)');
     let currentIndex = 0;
 
     function setActive(index) {
@@ -197,7 +198,8 @@ if (stickySection) {
         dots.forEach((el, i) => el.classList.toggle('active', i === index));
     }
 
-    window.addEventListener('scroll', () => {
+    function onStickyScroll() {
+        if (!desktopStickyMq.matches) return;
         const rect = stickySection.getBoundingClientRect();
         const scrolled = -rect.top;
         const scrollable = stickySection.offsetHeight - window.innerHeight;
@@ -205,73 +207,38 @@ if (stickySection) {
         const progress = Math.max(0, Math.min(1, scrolled / scrollable));
         const index = Math.min(Math.floor(progress * count), count - 1);
         setActive(index);
-    }, { passive: true });
-}
-
-// ========================================
-// Mobile Feature Cards
-// ========================================
-function buildMobileFeatures() {
-    const section = document.querySelector('.sticky-scroll-section');
-    if (!section) return;
-
-    const isMobile = window.innerWidth <= 768;
-
-    if (!isMobile) {
-        const mobileGrid = section.querySelector('.features-mobile');
-        const container = section.querySelector('.sticky-scroll-container');
-        if (mobileGrid) mobileGrid.remove();
-        if (container) container.style.display = '';
-        delete section.dataset.mobileDone;
-        return;
     }
 
-    if (section.dataset.mobileDone) return;
-    section.dataset.mobileDone = 'true';
-
-    const textItems = section.querySelectorAll('.sticky-text-item');
-    const imageItems = section.querySelectorAll('.sticky-image-item');
-    const container = section.querySelector('.sticky-scroll-container');
-
-    const mobileGrid = document.createElement('div');
-    mobileGrid.className = 'features-mobile';
-
-    textItems.forEach((text, i) => {
-        const card = document.createElement('div');
-        card.className = 'feature-card-mobile';
-
-        const imgWrap = document.createElement('div');
-        imgWrap.className = 'feature-card-img';
-        imgWrap.innerHTML = imageItems[i] ? imageItems[i].innerHTML : '';
-
-        const textWrap = document.createElement('div');
-        textWrap.className = 'feature-card-text';
-        textWrap.innerHTML = text.innerHTML;
-
-        card.appendChild(imgWrap);
-        card.appendChild(textWrap);
-        mobileGrid.appendChild(card);
-    });
-
-    if (container) container.style.display = 'none';
-    section.appendChild(mobileGrid);
-
-    const mobileObserver = new IntersectionObserver((entries) => {
+    const mobileReveal = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                mobileObserver.unobserve(entry.target);
-            }
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-inview');
+            mobileReveal.unobserve(entry.target);
         });
     }, { threshold: 0.12 });
 
-    mobileGrid.querySelectorAll('.feature-card-mobile').forEach(card => mobileObserver.observe(card));
+    function syncFeatureLayout() {
+        const featureNodes = [...textItems, ...imageItems];
+        featureNodes.forEach(el => mobileReveal.unobserve(el));
+
+        if (desktopStickyMq.matches) {
+            featureNodes.forEach(el => el.classList.remove('is-inview'));
+            onStickyScroll();
+            return;
+        }
+
+        if (prefersReducedMotion) {
+            featureNodes.forEach(el => el.classList.add('is-inview'));
+            return;
+        }
+
+        featureNodes.forEach(el => {
+            el.classList.remove('is-inview');
+            mobileReveal.observe(el);
+        });
+    }
+
+    window.addEventListener('scroll', onStickyScroll, { passive: true });
+    desktopStickyMq.addEventListener('change', syncFeatureLayout);
+    syncFeatureLayout();
 }
-
-buildMobileFeatures();
-
-let resizeTimer;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(buildMobileFeatures, 200);
-});
