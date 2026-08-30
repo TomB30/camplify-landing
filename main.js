@@ -2,9 +2,9 @@
 // Hero Slideshow with Lazy Loading
 // ========================================
 const heroSlides = document.querySelectorAll('.hero-slide');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 let currentSlide = 0;
 
-// Lazy load background images for slideshow
 function loadSlideBackground(slide) {
     const bgSrc = slide.getAttribute('data-bg-src');
     if (bgSrc && !slide.getAttribute('data-bg-loaded')) {
@@ -17,27 +17,28 @@ function loadSlideBackground(slide) {
     }
 }
 
-// Preload next slide when current slide is active
 function preloadNextSlide() {
+    if (!heroSlides.length) return;
     const nextIndex = (currentSlide + 1) % heroSlides.length;
     loadSlideBackground(heroSlides[nextIndex]);
 }
 
 function nextSlide() {
+    if (!heroSlides.length) return;
     heroSlides[currentSlide].classList.remove('active');
     currentSlide = (currentSlide + 1) % heroSlides.length;
     heroSlides[currentSlide].classList.add('active');
     preloadNextSlide();
 }
 
-// Preload next slide initially
 preloadNextSlide();
 
-// Change slide every 10 seconds
-setInterval(nextSlide, 10000);
+if (!prefersReducedMotion && heroSlides.length > 1) {
+    setInterval(nextSlide, 10000);
+}
 
 // ========================================
-// Hero headline: rotating word (soft fade, slower)
+// Hero headline: rotating word
 // ========================================
 const heroRotatingWords = ['operations', 'schedule', 'activities', 'housing', 'management'];
 const heroWordEl = document.getElementById('hero-rotating-word');
@@ -45,7 +46,7 @@ let heroWordIndex = 0;
 const heroWordIntervalMs = 4200;
 const heroWordFadeMs = 500;
 
-if (heroWordEl) {
+if (heroWordEl && !prefersReducedMotion) {
     setInterval(() => {
         heroWordEl.classList.add('hero-rotating-word--out');
         setTimeout(() => {
@@ -59,11 +60,6 @@ if (heroWordEl) {
 // ========================================
 // Intersection Observer for Animations
 // ========================================
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
@@ -72,54 +68,65 @@ const observer = new IntersectionObserver((entries) => {
             }, index * 100);
         }
     });
-}, observerOptions);
-
-document.querySelectorAll('.feature-block').forEach(block => {
-    observer.observe(block);
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
 });
 
 document.querySelectorAll('.about-text, .about-image, .contact-form').forEach(el => {
     observer.observe(el);
 });
 
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const formData = new FormData(this);
-
-  fetch("https://formspree.io/f/xlgggvna", {
-    method: "POST",
-    body: formData,
-    headers: {
-      "Accept": "application/json"
-    }
-  }).then(response => {
-    if (response.ok) {
-      const successMsg = document.getElementById("successMessage");
-      successMsg.classList.add("show");
-
-      this.reset();
-      successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
-
-      setTimeout(() => {
-        successMsg.classList.remove("show");
-      }, 5000);
-    } else {
-      throw new Error("Form submission failed");
-    }
-  }).catch(error => {
-    alert("Failed to send message. Please try again.");
-    console.error(error);
-  });
+// KEEP integrations: no-op until the commented HTML in index.html is uncommented.
+document.querySelectorAll('.features-integrations-copy, .integration-orbit').forEach(el => {
+    observer.observe(el);
 });
+
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+
+        fetch(this.action || 'https://formspree.io/f/xlgggvna', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                Accept: 'application/json'
+            }
+        }).then(response => {
+            if (!response.ok) {
+                throw new Error('Form submission failed');
+            }
+
+            const successMsg = document.getElementById('successMessage');
+            if (successMsg) {
+                successMsg.classList.add('show');
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                setTimeout(() => {
+                    successMsg.classList.remove('show');
+                }, 5000);
+            }
+
+            this.reset();
+        }).catch(error => {
+            alert('Failed to send message. Please try again.');
+            console.error(error);
+        });
+    });
+}
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+
+        const target = document.querySelector(href);
+        if (!target) return;
+
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
 
@@ -130,11 +137,11 @@ const faqItems = document.querySelectorAll('.faq-item');
 
 function closeItem(item) {
     const answer = item.querySelector('.faq-answer');
-    // Pin exact height (in case max-height is 'none'), disable transition momentarily
+    if (!answer) return;
+
     answer.style.transition = 'none';
     answer.style.maxHeight = answer.scrollHeight + 'px';
-    answer.offsetHeight; // force reflow so the browser registers the pinned value
-    // Now animate to 0
+    answer.offsetHeight;
     answer.style.transition = '';
     answer.style.maxHeight = '0px';
     item.classList.remove('is-open');
@@ -144,11 +151,12 @@ function closeItem(item) {
 }
 
 function openItem(item) {
+    const answer = item.querySelector('.faq-answer');
+    if (!answer) return;
+
     item.setAttribute('open', '');
     item.classList.add('is-open');
-    const answer = item.querySelector('.faq-answer');
     answer.style.maxHeight = answer.scrollHeight + 'px';
-    // Once open, lift the fixed height so content can reflow freely
     answer.addEventListener('transitionend', () => {
         if (item.hasAttribute('open')) answer.style.maxHeight = 'none';
     }, { once: true });
@@ -156,11 +164,12 @@ function openItem(item) {
 
 faqItems.forEach(item => {
     const summary = item.querySelector('.faq-question');
+    if (!summary) return;
+
     summary.addEventListener('click', e => {
         e.preventDefault();
         const isOpen = item.hasAttribute('open');
 
-        // Close any other open item first
         faqItems.forEach(other => {
             if (other !== item && other.hasAttribute('open')) closeItem(other);
         });
@@ -209,7 +218,6 @@ function buildMobileFeatures() {
     const isMobile = window.innerWidth <= 768;
 
     if (!isMobile) {
-        // Restore desktop layout if it was swapped
         const mobileGrid = section.querySelector('.features-mobile');
         const container = section.querySelector('.sticky-scroll-container');
         if (mobileGrid) mobileGrid.remove();
@@ -248,17 +256,16 @@ function buildMobileFeatures() {
     if (container) container.style.display = 'none';
     section.appendChild(mobileGrid);
 
-    // Fade-in cards as they scroll into view
-    const observer = new IntersectionObserver((entries) => {
+    const mobileObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
+                mobileObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.12 });
 
-    mobileGrid.querySelectorAll('.feature-card-mobile').forEach(card => observer.observe(card));
+    mobileGrid.querySelectorAll('.feature-card-mobile').forEach(card => mobileObserver.observe(card));
 }
 
 buildMobileFeatures();
@@ -268,16 +275,3 @@ window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(buildMobileFeatures, 200);
 });
-
-let lastScrollY = window.scrollY;
-// window.addEventListener('scroll', () => {
-//     const currentScrollY = window.scrollY;
-    
-//     document.querySelectorAll('.feature-card').forEach((card, index) => {
-//         const speed = 0.05 + (index * 0.01);
-//         const yPos = -(currentScrollY * speed);
-//         card.style.transform = `translateY(${yPos}px)`;
-//     });
-    
-//     lastScrollY = currentScrollY;
-// });

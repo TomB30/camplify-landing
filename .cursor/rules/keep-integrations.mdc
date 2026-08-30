@@ -1,0 +1,21 @@
+---
+description: Keep the Integrations section commented until Campminder approval; do not delete related CSS, JS, or logo assets.
+alwaysApply: true
+---
+
+# KEEP: integrations section (must stay commented)
+
+The Features **Integrations** block in `index.html` is **intentionally commented out**. Do not uncomment it for production. Do not delete it.
+
+Waiting on: Campminder logo approval, plus calendar integration.
+
+When (and only when) those are approved: uncomment the HTML wrapper in `index.html`. Keep matching CSS/JS/assets.
+
+## Do not delete
+
+- Commented HTML in `index.html` (search `KEEP COMMENTED` / `KEEP integrations`)
+- CSS in `main.css` marked `KEEP: integrations section` (`.features-integrations`, `.integration-orbit`, `.integration-tile`)
+- JS observer in `main.js` for `.features-integrations-copy` and `.integration-orbit`
+- `media/campminder-logo.webp`
+- `media/google-calendar-logo.webp`
+- `media/apple-calendar-logo.webp`
