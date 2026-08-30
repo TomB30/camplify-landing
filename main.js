@@ -77,6 +77,11 @@ document.querySelectorAll('.about-text, .about-image, .contact-form').forEach(el
     observer.observe(el);
 });
 
+// KEEP integrations: no-op until the commented HTML in index.html is uncommented.
+document.querySelectorAll('.features-integrations-copy, .integration-orbit').forEach(el => {
+    observer.observe(el);
+});
+
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
