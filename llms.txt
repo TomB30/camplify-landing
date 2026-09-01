@@ -21,6 +21,8 @@ Camp directors, administrators, and operations staff at day camps and overnight 
 ## Key pages
 
 - Homepage: https://camplify.app/
+- Logo: https://camplify.app/logo/
+- Logo file (SVG): https://camplify.app/media/camplify-logo-500x200.svg
 - Privacy Policy: https://camplify.app/privacy-policy/
 - Terms of Use: https://camplify.app/terms-of-use/
 

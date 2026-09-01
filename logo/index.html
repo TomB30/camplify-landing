@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Official Camplify logo. Hosted on camplify.app for use across websites, apps, and other platforms." />
+    <meta name="author" content="Camplify LLC" />
+    <meta name="theme-color" content="#38b6ff" />
+
+    <meta property="og:title" content="Camplify Logo" />
+    <meta property="og:description" content="Official Camplify wordmark, hosted on camplify.app." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://camplify.app/logo/" />
+    <meta property="og:image" content="https://camplify.app/media/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://camplify.app/media/og-image.jpg" />
+
+    <link rel="canonical" href="https://camplify.app/logo/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../main.css?v=47" />
+    <link rel="icon" href="../media/camplify-icon-48x48.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../media/apple-touch-icon.png" />
+    <script src="../layout.js?v=7" defer></script>
+    <title>Camplify Logo</title>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageObject",
+      "name": "Camplify logo",
+      "description": "Official Camplify wordmark.",
+      "contentUrl": "https://camplify.app/media/camplify-logo-500x200.svg",
+      "url": "https://camplify.app/logo/",
+      "encodingFormat": "image/svg+xml",
+      "creator": {
+        "@type": "Organization",
+        "name": "Camplify LLC",
+        "url": "https://camplify.app/"
+      }
+    }
+    </script>
+    <style>
+        .logo-page {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 120px 24px 80px;
+        }
+
+        .logo-page .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 32px;
+        }
+
+        .logo-page h1 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .logo-page .lede {
+            color: var(--text-light);
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .logo-previews {
+            display: grid;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .logo-preview {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .logo-preview-label {
+            padding: 10px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-medium);
+            background: var(--bg-light);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-preview-stage {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: clamp(24px, 6vw, 48px) clamp(16px, 5vw, 40px);
+        }
+
+        .logo-preview-stage img {
+            width: min(100%, 420px);
+            height: auto;
+            display: block;
+        }
+
+        .logo-preview--light .logo-preview-stage {
+            background:
+                linear-gradient(45deg, #e5e7eb 25%, transparent 25%),
+                linear-gradient(-45deg, #e5e7eb 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #e5e7eb 75%),
+                linear-gradient(-45deg, transparent 75%, #e5e7eb 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+            background-color: #fff;
+        }
+
+        .logo-preview--dark .logo-preview-label {
+            background: #111827;
+            color: #d1d5db;
+            border-bottom-color: #1f2937;
+        }
+
+        .logo-preview--dark .logo-preview-stage {
+            background: #0f172a;
+        }
+
+        .logo-url {
+            margin-bottom: 16px;
+            padding: 12px 14px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            background: var(--bg-light);
+            color: var(--text-dark);
+            font-size: 14px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+            word-break: break-all;
+            line-height: 1.45;
+        }
+
+        .logo-url a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .logo-url a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .logo-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .logo-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 10px 18px;
+            border-radius: var(--radius-full);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            box-sizing: border-box;
+        }
+
+        .logo-btn-primary {
+            background: var(--text-dark);
+            color: #fff;
+        }
+
+        .logo-btn-secondary {
+            background: #fff;
+            color: var(--primary);
+            border: 1.5px solid var(--primary);
+        }
+
+        .logo-note {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-top: 16px;
+        }
+
+        .logo-note a {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .logo-page {
+                padding: 100px 20px 64px;
+            }
+
+            .logo-actions {
+                flex-direction: column;
+            }
+
+            .logo-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-left">
+            <div class="logo">
+                <a href="https://camplify.app">
+                    <img src="../media/camplify-logo-500x200.svg" alt="Camplify" class="logo-image" />
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="/#features">Features</a>
+                <a href="/#about">About</a>
+                <a href="/#faq">FAQs</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="https://app.camplify.app/" class="nav-btn-secondary nav-btn-desktop-only">Login</a>
+            <a href="/#contact" class="nav-btn-primary nav-btn-desktop-only">Contact Us</a>
+            <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="6" y2="6"/>
+                    <line x1="4" x2="20" y1="12" y2="12"/>
+                    <line x1="4" x2="20" y1="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="logo-page">
+        <a href="/" class="back-link">← Back to Home</a>
+        <h1>Camplify logo</h1>
+        <p class="lede">Use this official wordmark from camplify.app. The file is public — link it from other sites, apps, or tools with the URL below.</p>
+
+        <div class="logo-previews">
+            <figure class="logo-preview logo-preview--light">
+                <figcaption class="logo-preview-label">Light background</figcaption>
+                <div class="logo-preview-stage">
+                    <img src="../media/camplify-logo-500x200.svg" alt="Camplify logo" width="500" height="200" />
+                </div>
+            </figure>
+            <figure class="logo-preview logo-preview--dark">
+                <figcaption class="logo-preview-label">Dark background</figcaption>
+                <div class="logo-preview-stage">
+                    <img src="../media/camplify-logo-500x200.svg" alt="" width="500" height="200" />
+                </div>
+            </figure>
+        </div>
+
+        <p class="logo-url" id="logoFileUrl"><a href="https://camplify.app/media/camplify-logo-500x200.svg">https://camplify.app/media/camplify-logo-500x200.svg</a></p>
+        <div class="logo-actions">
+            <button type="button" class="logo-btn logo-btn-primary" id="copyLogoUrl">Copy file URL</button>
+            <a class="logo-btn logo-btn-secondary" href="../media/camplify-logo-500x200.svg" download="camplify-logo.svg">Download SVG</a>
+        </div>
+        <p class="logo-note">This page: <a href="https://camplify.app/logo/">https://camplify.app/logo/</a>. Embed the SVG file URL in other platforms, not this page URL.</p>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <a href="https://camplify.app">
+                    <img src="../media/camplify-logo-500x200.svg" alt="Camplify" class="footer-logo">
+                </a>
+                <p class="footer-tagline">Making summer camp management<br>simple, natural, and joyful.</p>
+            </div>
+            <div class="footer-nav">
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Product</h4>
+                    <a href="/#features" class="footer-link">Features</a>
+                    <a href="/#about" class="footer-link">About</a>
+                    <a href="/#contact" class="footer-link">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-col-heading">Legal</h4>
+                    <a href="/privacy-policy/" class="footer-link">Privacy Policy</a>
+                    <a href="/terms-of-use/" class="footer-link">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Camplify LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <div class="mobile-menu-card">
+            <div class="mobile-menu-header">
+                <a href="https://camplify.app">
+                    <img src="../media/camplify-logo-500x200.svg" alt="Camplify" class="logo-image" />
+                </a>
+                <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <nav class="mobile-menu-links">
+                <a href="/#features" class="mobile-menu-link">Features</a>
+                <a href="/#about" class="mobile-menu-link">About</a>
+                <a href="/#faq" class="mobile-menu-link">FAQs</a>
+            </nav>
+            <div class="mobile-menu-ctas">
+                <a href="/#contact" class="mobile-cta-primary">Contact Us &rsaquo;</a>
+                <a href="https://app.camplify.app/" class="mobile-cta-secondary">Login</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function () {
+            var url = 'https://camplify.app/media/camplify-logo-500x200.svg';
+            var button = document.getElementById('copyLogoUrl');
+            if (!button) return;
+            var idleLabel = button.textContent;
+
+            function copied() {
+                button.textContent = 'Copied';
+                window.setTimeout(function () {
+                    button.textContent = idleLabel;
+                }, 1600);
+            }
+
+            function copyFallback() {
+                var field = document.createElement('textarea');
+                field.value = url;
+                field.setAttribute('readonly', '');
+                field.style.position = 'fixed';
+                field.style.top = '0';
+                field.style.left = '0';
+                field.style.opacity = '0';
+                document.body.appendChild(field);
+                field.select();
+                field.setSelectionRange(0, url.length);
+                var ok = false;
+                try {
+                    ok = document.execCommand('copy');
+                } catch (err) {
+                    ok = false;
+                }
+                document.body.removeChild(field);
+                return ok;
+            }
+
+            button.addEventListener('click', function () {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(url).then(copied).catch(function () {
+                        if (copyFallback()) copied();
+                    });
+                    return;
+                }
+                if (copyFallback()) copied();
+            });
+        })();
+    </script>
+</body>
+</html>
