@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Camplify is summer camp management software for directors and administrators. Schedule activities, manage housing, staff, and campers — for day camps and overnight camps.">
+    <meta name="description" content="Summer camp management software for directors and administrators. Schedule activities, assign housing, and manage staff and campers at day and overnight camps.">
     <meta name="author" content="Camplify LLC">
     <meta name="theme-color" content="#38b6ff">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="Camplify - Summer Camp Management Software">
-    <meta property="og:description" content="The complete platform that transforms summer camp operations into seamless experiences.">
+    <meta property="og:description" content="Camplify helps camp directors schedule activities, assign housing, and manage staff and campers in one place. Built for day camps and overnight camps.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://camplify.app/">
+    <meta property="og:site_name" content="Camplify">
+    <meta property="og:locale" content="en_US">
     <meta property="og:image" content="https://camplify.app/media/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Camplify summer camp management software">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Camplify - Summer Camp Management Software">
-    <meta name="twitter:description" content="The complete platform that transforms summer camp operations into seamless experiences.">
+    <meta name="twitter:description" content="Camplify helps camp directors schedule activities, assign housing, and manage staff and campers in one place. Built for day camps and overnight camps.">
     <meta name="twitter:image" content="https://camplify.app/media/og-image.jpg">
+    <meta name="twitter:image:alt" content="Camplify summer camp management software">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://camplify.app/">
@@ -47,12 +51,31 @@
       "@graph": [
         {
           "@type": "Organization",
+          "@id": "https://camplify.app/#organization",
           "name": "Camplify",
           "legalName": "Camplify LLC",
           "url": "https://camplify.app/",
           "logo": "https://camplify.app/media/camplify-logo-500x200.svg",
+          "image": "https://camplify.app/media/og-image.jpg",
           "email": "contact@camplify.app",
-          "description": "Summer camp management software for scheduling, housing, staff, and daily operations."
+          "description": "Summer camp management software for scheduling, housing, staff, and daily operations.",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "contact@camplify.app",
+            "url": "https://camplify.app/#contact",
+            "availableLanguage": ["English"]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://camplify.app/#website",
+          "name": "Camplify",
+          "url": "https://camplify.app/",
+          "inLanguage": "en-US",
+          "publisher": {
+            "@id": "https://camplify.app/#organization"
+          }
         },
         {
           "@type": "SoftwareApplication",
@@ -61,15 +84,8 @@
           "operatingSystem": "Web",
           "url": "https://camplify.app/",
           "description": "Camp management platform for scheduling activities, housing assignments, staff and camper management, and daily camp operations.",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD",
-            "description": "Contact for pricing"
-          },
           "publisher": {
-            "@type": "Organization",
-            "name": "Camplify LLC"
+            "@id": "https://camplify.app/#organization"
           }
         },
         {
@@ -80,7 +96,7 @@
               "name": "How does the auto-scheduling feature work?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Camplify's auto-scheduler analyzes your programs, staff availability, camper preferences, and facility constraints to automatically generate conflict-free schedules. You choose the scheduling mode — cabin-based or camper-choice — and our engine handles the rest in seconds."
+                "text": "Camplify's auto-scheduler analyzes your programs, staff availability, camper preferences, and facility constraints to automatically generate conflict-free schedules. You choose cabin-based or camper-choice scheduling, and our engine handles the rest in seconds."
               }
             },
             {
@@ -112,7 +128,7 @@
               "name": "Does Camplify support calendar export and reporting?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. You can export your full camp calendar to Excel or PDF. Camplify also includes customizable dashboards with real-time metrics on attendance, participation, meal counts, and more — so directors always have the data they need."
+                "text": "Yes. You can export your full camp calendar to Excel or PDF. Camplify also includes customizable dashboards with real-time metrics on attendance, participation, meal counts, and more, so directors always have the data they need."
               }
             },
             {
@@ -120,7 +136,7 @@
               "name": "How do I get started with Camplify?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Getting started is easy. Fill out the contact form below and our team will reach out to learn about your camp's size and needs. Onboarding is guided and straightforward — most camps are fully set up within a day."
+                "text": "Getting started is easy. Fill out the contact form below and our team will reach out to learn about your camp's size and needs. Onboarding is guided and straightforward. Most camps are fully set up within a day."
               }
             }
           ]
@@ -163,7 +179,7 @@
         </nav>
         <div class="hero">
             <div class="hero-copy">
-                <h1><span class="sr-only">Summer camp management software — </span><span class="hero-headline-static">Simplify camp</span><br><span id="hero-rotating-word" class="hero-rotating-word" aria-live="polite">management</span></h1>
+                <h1><span class="sr-only">Summer camp management software. </span><span class="hero-headline-static">Simplify camp</span><br><span id="hero-rotating-word" class="hero-rotating-word" aria-live="polite">management</span></h1>
                 <p>Camp software that simplifies scheduling, housing, staff, and daily operations for day camps and overnight camps.</p>
                 <a href="https://cal.com/camplify/30min" class="cta-button">Book a Demo</a>
             </div>
@@ -179,7 +195,7 @@
                                 </div>
                             </div>
                             <div class="showcase-window-content" data-hero-scale="1280">
-                                <div class="hero-desk" role="img" aria-label="Camplify Dashboard on desktop — meals, birthdays, and camp-wide schedule">
+                                <div class="hero-desk" role="img" aria-label="Camplify Dashboard on desktop, showing meals, birthdays, special events, and much more">
                                     <svg class="hero-mk-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                                         <defs>
                                             <symbol fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="mk-layout" viewBox="0 0 24 24"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></symbol>
@@ -494,7 +510,7 @@
                     <div class="showcase-phone">
                         <div class="showcase-phone-bezel">
                             <div class="showcase-phone-screen" data-hero-scale="496">
-                                <div class="hero-phone" role="img" aria-label="Camplify on mobile — daily calendar for Sunday, Jul 26, 2026">
+                                <div class="hero-phone" role="img" aria-label="Camplify on mobile, showing the daily calendar for Sunday, Jul 26, 2026">
                                     <div class="hero-phone-canvas" aria-hidden="true">
                                     <div class="mockup-phone-brand">
                                         <img src="./media/camplify-logo-500x200.svg" alt="" width="120" height="48">
@@ -623,12 +639,12 @@
                         <div class="sticky-text-item active" data-index="0">
                             <span class="feature-eyebrow">Auto scheduling</span>
                             <h2>A full camp schedule, in seconds.</h2>
-                            <p>Choose groups, activities, and time blocks. Camplify builds the week for you — with no conflicts to untangle.</p>
+                            <p>Choose groups, activities, and time blocks. Camplify builds the week for you, with no conflicts to untangle.</p>
                         </div>
                         <div class="sticky-text-item" data-index="1">
                             <span class="feature-eyebrow">Electives</span>
                             <h2>Camper choices, assigned in one place.</h2>
-                            <p>Collect ranked picks, review submissions, and lock assignments — without a spreadsheet.</p>
+                            <p>Collect ranked picks, review submissions, and lock assignments without a spreadsheet.</p>
                         </div>
                         <div class="sticky-text-item" data-index="2">
                             <span class="feature-eyebrow">Programs</span>
@@ -681,7 +697,7 @@
                                     <span>Cap (max)</span>
                                     <span class="is-on">Target</span>
                                 </div>
-                                <span class="scheduler-toggle-hint">Activity limits — per group (optional)</span>
+                                <span class="scheduler-toggle-hint">Activity limits per group (optional)</span>
                             </div>
                             <div class="scheduler-grid">
                                 <div class="scheduler-card">
@@ -1226,7 +1242,7 @@
                     <article class="bento-card bento-card--preview">
                         <div class="bento-card-copy">
                             <h3>Vehicles</h3>
-                            <p>See who's driving what — then cut the trips that don't need to happen.</p>
+                            <p>See who's driving what, then cut the trips that don't need to happen.</p>
                         </div>
                         <div class="bento-app" aria-hidden="true">
                             <div class="bento-app-section">
@@ -1254,7 +1270,7 @@
                     <article class="bento-card bento-card--preview bento-card--bar">
                         <div class="bento-card-copy">
                             <h3>Housing</h3>
-                            <p>See every cabin at a glance — capacity, bathrooms, and village.</p>
+                            <p>See every cabin at a glance, including capacity, bathrooms, and village.</p>
                         </div>
                         <div class="bento-app" aria-hidden="true">
                             <div class="bento-housing-card">
@@ -1358,7 +1374,7 @@
                         <span class="faq-icon"></span>
                     </summary>
                     <div class="faq-answer">
-                        <p>Camplify's auto-scheduler analyzes your programs, staff availability, camper preferences, and facility constraints to automatically generate conflict-free schedules. You choose the scheduling mode — cabin-based or camper-choice — and our engine handles the rest in seconds.</p>
+                        <p>Camplify's auto-scheduler analyzes your programs, staff availability, camper preferences, and facility constraints to automatically generate conflict-free schedules. You choose cabin-based or camper-choice scheduling, and our engine handles the rest in seconds.</p>
                     </div>
                 </details>
 
@@ -1398,7 +1414,7 @@
                         <span class="faq-icon"></span>
                     </summary>
                     <div class="faq-answer">
-                        <p>Yes. You can export your full camp calendar to Excel or PDF. Camplify also includes customizable dashboards with real-time metrics on attendance, participation, meal counts, and more — so directors always have the data they need.</p>
+                        <p>Yes. You can export your full camp calendar to Excel or PDF. Camplify also includes customizable dashboards with real-time metrics on attendance, participation, meal counts, and more, so directors always have the data they need.</p>
                     </div>
                 </details>
 
@@ -1408,7 +1424,7 @@
                         <span class="faq-icon"></span>
                     </summary>
                     <div class="faq-answer">
-                        <p>Getting started is easy. Fill out the contact form below and our team will reach out to learn about your camp's size and needs. Onboarding is guided and straightforward — most camps are fully set up within a day.</p>
+                        <p>Getting started is easy. Fill out the contact form below and our team will reach out to learn about your camp's size and needs. Onboarding is guided and straightforward. Most camps are fully set up within a day.</p>
                     </div>
                 </details>
 
