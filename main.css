@@ -233,9 +233,9 @@ body {
     background:
         linear-gradient(
             90deg,
-            rgba(15, 23, 42, 0.72) 0%,
-            rgba(15, 23, 42, 0.42) 46%,
-            rgba(15, 23, 42, 0.32) 100%
+            rgba(15, 23, 42, 0.82) 0%,
+            rgba(15, 23, 42, 0.58) 38%,
+            rgba(15, 23, 42, 0.28) 100%
         ),
         linear-gradient(
             to bottom,
@@ -268,7 +268,7 @@ body {
 .hero {
     flex: 1;
     display: grid;
-    grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.7fr);
+    grid-template-columns: minmax(280px, 0.86fr) minmax(0, 1.5fr);
     align-items: center;
     gap: 24px 28px;
     text-align: left;
@@ -285,13 +285,13 @@ body {
 }
 
 .hero h1 {
-    font-size: clamp(36px, 4.6vw, 62px);
+    font-size: clamp(44px, 5vw, 72px);
     font-weight: 700;
     color: #FFFFFF;
-    line-height: 1.1;
-    letter-spacing: -2px;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    line-height: 0.98;
+    letter-spacing: -2.4px;
+    margin-bottom: 18px;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
 }
 
 .sr-only {
@@ -306,18 +306,41 @@ body {
     border: 0;
 }
 
-.hero-headline-static,
-.hero-rotating-word {
+.hero-headline-static {
     display: inline-block;
-    font-size: 1.2em;
+}
+
+.hero p.hero-slogan {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+    gap: 0.35em;
+    max-width: none;
+    margin: 0 0 16px;
+    font-size: clamp(20px, 2vw, 28px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.hero-slogan-fixed {
+    color: rgba(255, 255, 255, 0.94);
 }
 
 .hero-rotating-word {
-    transition: opacity 0.5s ease;
+    display: inline-block;
+    min-width: 14.5ch;
+    color: var(--primary-light);
+    text-align: left;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .hero-rotating-word--out {
     opacity: 0;
+    transform: translateY(0.25em);
 }
 
 .hero p {
@@ -327,6 +350,15 @@ body {
     margin-bottom: 28px;
     line-height: 1.7;
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero p.hero-lede {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 34ch;
+    margin-bottom: 26px;
 }
 
 .cta-button {
@@ -1518,6 +1550,14 @@ body {
         text-align: center;
     }
 
+    .hero p.hero-slogan {
+        justify-content: center;
+    }
+
+    .hero-rotating-word {
+        text-align: center;
+    }
+
     .hero p {
         max-width: 46ch;
     }
@@ -1542,6 +1582,15 @@ body {
         width: 20%;
         min-width: 108px;
         max-width: 136px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero p.hero-slogan {
+        white-space: normal;
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 0;
     }
 }
 
@@ -1636,13 +1685,15 @@ body {
 /* ── Left: text ── */
 
 .sticky-scroll-left {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    align-items: flex-start;
 }
 
 .sticky-text-items {
     position: relative;
+    width: 100%;
     min-height: 340px;
 }
 
@@ -1680,25 +1731,70 @@ body {
     max-width: 42ch;
 }
 
-/* Progress dots */
+/* Scroll cue under the copy */
 
 .sticky-progress {
+    position: absolute;
+    left: 0;
+    top: 250px;
     display: flex;
-    gap: 8px;
     align-items: center;
+    gap: 16px;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
 }
 
-.sticky-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 4px;
-    background: var(--border);
-    transition: width 0.35s ease, background 0.35s ease;
+.sticky-scroll-hint {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary-dark);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
 }
 
-.sticky-dot.active {
-    width: 28px;
-    background: var(--primary);
+.sticky-step-count {
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.sticky-step-count::before {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    margin-right: 16px;
+    border-radius: 50%;
+    background: #d1d5db;
+    vertical-align: 2px;
+}
+
+.sticky-scroll-chevron {
+    width: 18px;
+    height: 18px;
+    animation: stickyScrollNudge 1.5s ease-in-out infinite;
+}
+
+.sticky-progress.is-done {
+    opacity: 0;
+}
+
+@keyframes stickyScrollNudge {
+    0%, 100% { transform: translateY(0); opacity: 0.45; }
+    50% { transform: translateY(4px); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sticky-scroll-chevron {
+        animation: none;
+        opacity: 1;
+    }
 }
 
 /* ── Right: crossfading images ── */

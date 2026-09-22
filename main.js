@@ -38,13 +38,11 @@ if (!prefersReducedMotion && heroSlides.length > 1) {
 }
 
 // ========================================
-// Hero headline: rotating word
+// Hero slogan: rotating promise
 // ========================================
-const heroRotatingWords = ['operations', 'schedule', 'activities', 'housing', 'management'];
+const heroRotatingWords = ['Full clarity.', 'Total control.', 'One schedule.', 'Every detail.'];
 const heroWordEl = document.getElementById('hero-rotating-word');
 let heroWordIndex = 0;
-const heroWordIntervalMs = 4200;
-const heroWordFadeMs = 500;
 
 if (heroWordEl && !prefersReducedMotion) {
     setInterval(() => {
@@ -53,8 +51,8 @@ if (heroWordEl && !prefersReducedMotion) {
             heroWordIndex = (heroWordIndex + 1) % heroRotatingWords.length;
             heroWordEl.textContent = heroRotatingWords[heroWordIndex];
             heroWordEl.classList.remove('hero-rotating-word--out');
-        }, heroWordFadeMs);
-    }, heroWordIntervalMs);
+        }, 400);
+    }, 2800);
 }
 
 // ========================================
@@ -185,7 +183,8 @@ const stickySection = document.querySelector('.sticky-scroll-section');
 if (stickySection) {
     const textItems = stickySection.querySelectorAll('.sticky-text-item');
     const imageItems = stickySection.querySelectorAll('.sticky-image-item');
-    const dots = stickySection.querySelectorAll('.sticky-dot');
+    const progressEl = stickySection.querySelector('.sticky-progress');
+    const stepCount = stickySection.querySelector('.sticky-step-count');
     const count = textItems.length;
     const desktopStickyMq = window.matchMedia('(min-width: 769px)');
     let currentIndex = 0;
@@ -195,7 +194,18 @@ if (stickySection) {
         currentIndex = index;
         textItems.forEach((el, i) => el.classList.toggle('active', i === index));
         imageItems.forEach((el, i) => el.classList.toggle('active', i === index));
-        dots.forEach((el, i) => el.classList.toggle('active', i === index));
+        if (stepCount) stepCount.textContent = `${index + 1} of ${count}`;
+        if (progressEl) progressEl.classList.toggle('is-done', index === count - 1);
+        placeCue();
+    }
+
+    function placeCue() {
+        if (!progressEl || !desktopStickyMq.matches) return;
+        const paragraph = stickySection.querySelector('.sticky-text-item.active p');
+        const parent = progressEl.offsetParent;
+        if (!paragraph || !parent) return;
+        const top = paragraph.getBoundingClientRect().bottom - parent.getBoundingClientRect().top + 28;
+        progressEl.style.top = `${Math.round(top)}px`;
     }
 
     function onStickyScroll() {
@@ -239,6 +249,9 @@ if (stickySection) {
     }
 
     window.addEventListener('scroll', onStickyScroll, { passive: true });
+    window.addEventListener('resize', placeCue);
     desktopStickyMq.addEventListener('change', syncFeatureLayout);
     syncFeatureLayout();
+    placeCue();
+    if (document.fonts) document.fonts.ready.then(placeCue);
 }

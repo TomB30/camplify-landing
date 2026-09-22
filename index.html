@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./main.css?v=47">
+    <link rel="stylesheet" href="./main.css?v=56">
     <link rel="icon" href="./media/camplify-icon-48x48.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="./media/apple-touch-icon.png">
     <script src="./layout.js?v=7" defer></script>
@@ -179,8 +179,12 @@
         </nav>
         <div class="hero">
             <div class="hero-copy">
-                <h1><span class="sr-only">Summer camp management software. </span><span class="hero-headline-static">Simplify camp</span><br><span id="hero-rotating-word" class="hero-rotating-word" aria-live="polite">management</span></h1>
-                <p>Camp software that simplifies scheduling, housing, staff, and daily operations for day camps and overnight camps.</p>
+                <h1><span class="sr-only">Summer camp management software. </span><span class="hero-headline-static">Camplicity</span></h1>
+                <p class="hero-slogan">
+                    <span class="hero-slogan-fixed">One platform.</span>
+                    <span id="hero-rotating-word" class="hero-rotating-word">Full clarity.</span>
+                </p>
+                <p class="hero-lede">Scheduling, housing, staff, and daily operations for day camps and overnight camps.</p>
                 <a href="https://cal.com/camplify/30min" class="cta-button">Book a Demo</a>
             </div>
             <div class="showcase-backdrop hero-showcase-backdrop">
@@ -639,7 +643,7 @@
                         <div class="sticky-text-item active" data-index="0">
                             <span class="feature-eyebrow">Auto scheduling</span>
                             <h2>A full camp schedule, in seconds.</h2>
-                            <p>Choose groups, activities, and time blocks. Camplify builds the week for you, with no conflicts to untangle.</p>
+                            <p>Choose groups, activities, and time blocks. Camplicity builds the week for you, with no conflicts to untangle.</p>
                         </div>
                         <div class="sticky-text-item" data-index="1">
                             <span class="feature-eyebrow">Electives</span>
@@ -653,9 +657,13 @@
                         </div>
                     </div>
                     <div class="sticky-progress" aria-hidden="true">
-                        <span class="sticky-dot active" data-index="0"></span>
-                        <span class="sticky-dot" data-index="1"></span>
-                        <span class="sticky-dot" data-index="2"></span>
+                        <div class="sticky-scroll-hint">
+                            <svg class="sticky-scroll-chevron" viewBox="0 0 16 16" fill="none">
+                                <path d="M4 6.5 8 10.5 12 6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Scroll down</span>
+                        </div>
+                        <span class="sticky-step-count">1 of 3</span>
                     </div>
                 </div>
 
@@ -1481,7 +1489,7 @@
                 <a href="https://camplify.app">
                     <img src="./media/camplify-logo-500x200.svg" alt="Camplify" class="footer-logo">
                 </a>
-                <p class="footer-tagline">Making summer camp management<br>simple, natural, and joyful.</p>
+                <p class="footer-tagline">Making summer camp management simple</p>
             </div>
             <div class="footer-nav">
                 <div class="footer-col">
@@ -1528,6 +1536,6 @@
         </div>
     </div>
 
-    <script src="./main.js?v=4"></script>
+    <script src="./main.js?v=10"></script>
 </body>
 </html>
