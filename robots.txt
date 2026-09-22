@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://camplify.app/sitemap.xml
+Sitemap: https://camplicity.app/sitemap.xml

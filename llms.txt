@@ -1,10 +1,10 @@
-# Camplify
+# Camplicity
 
 > Summer camp management software for camp directors and administrators.
 
-Camplify (https://camplify.app) is a web-based camp management platform built by Camplify LLC. It helps summer camps, day camps, and overnight camps manage scheduling, housing, staff, campers, and daily operations in one place.
+Camplicity (https://camplicity.app), formerly Camplify, is a web-based camp management platform built by Camplicity LLC. It helps summer camps, day camps, and overnight camps manage scheduling, housing, staff, campers, and daily operations in one place.
 
-## What Camplify does
+## What Camplicity does
 
 - Auto-schedules camp activities and programs (cabin-based or camper-choice modes)
 - Manages activities with time blocks, locations, staff, and capacity
@@ -20,17 +20,17 @@ Camp directors, administrators, and operations staff at day camps and overnight 
 
 ## Key pages
 
-- Homepage: https://camplify.app/
-- Logo: https://camplify.app/logo/
-- Logo file (SVG): https://camplify.app/media/camplify-logo-500x200.svg
-- Privacy Policy: https://camplify.app/privacy-policy/
-- Terms of Use: https://camplify.app/terms-of-use/
+- Homepage: https://camplicity.app/
+- Logo: https://camplicity.app/logo/
+- Logo file (SVG): https://camplicity.app/media/camplicity-logo-500x200.svg
+- Privacy Policy: https://camplicity.app/privacy-policy/
+- Terms of Use: https://camplicity.app/terms-of-use/
 
 ## Contact
 
 - Email: contact@camplify.app
-- Contact: https://camplify.app/#contact
+- Contact: https://camplicity.app/#contact
 
 ## Brand note
 
-Camplify (camplify.app) is summer camp management software. It is not related to camplify.com.au (RV rental) or camplify.com.sg (Singapore kids' camps).
+Camplicity was previously called Camplify. Camplicity (camplicity.app) is summer camp management software. It is not related to camplify.com.au (RV rental) or camplify.com.sg (Singapore kids' camps).
