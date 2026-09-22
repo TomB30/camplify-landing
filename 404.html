@@ -12,55 +12,56 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/main.css?v=47" />
+    <link rel="stylesheet" href="/main.css?v=56" />
     <link rel="icon" href="/media/camplicity-icon-48x48.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="180x180" href="/media/apple-touch-icon.png" />
     <script src="/layout.js?v=7" defer></script>
     <title>Page Not Found - Camplicity</title>
     <style>
-        .notfound {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 160px 24px 120px;
-            text-align: center;
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
         }
-        .notfound-code {
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
+        .notfound {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 140px 24px 80px;
+            background:
+                radial-gradient(ellipse 80% 55% at 50% 30%, rgba(56, 182, 255, 0.16), transparent 70%),
+                linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+        }
+        .notfound .notfound-code {
+            font-size: clamp(80px, 14vw, 128px);
+            font-weight: 700;
+            letter-spacing: -0.06em;
+            line-height: 0.9;
+            margin-bottom: 12px;
             color: var(--primary);
-            margin-bottom: 16px;
+            background: linear-gradient(180deg, #5fc5fe 0%, #1e9de8 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .notfound h1 {
-            font-size: clamp(32px, 4vw, 48px);
+            font-size: clamp(28px, 4vw, 40px);
             font-weight: 700;
             color: var(--text-dark);
             letter-spacing: -1px;
-            margin-bottom: 16px;
+            line-height: 1.15;
+            margin-bottom: 12px;
         }
         .notfound p {
             color: var(--text-light);
             font-size: 17px;
-            line-height: 1.7;
-            margin: 0 auto 32px;
-            max-width: 520px;
-        }
-        .notfound-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 24px;
-            margin-top: 40px;
-        }
-        .notfound-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-        .notfound-links a:hover {
-            color: var(--primary);
+            line-height: 1.6;
+            max-width: 42ch;
+            margin: 0 auto 28px;
         }
     </style>
 </head>
@@ -80,7 +81,7 @@
     </div>
     <div class="nav-right">
         <a href="https://app.camplicity.app/" class="nav-btn-secondary nav-btn-desktop-only">Login</a>
-        <a href="/#contact" class="nav-btn-primary nav-btn-desktop-only">Contact Us</a>
+        <a href="https://cal.com/camplicity/30min" class="nav-btn-primary nav-btn-desktop-only">Book a Demo</a>
         <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="4" x2="20" y1="6" y2="6"/>
@@ -92,16 +93,10 @@
 </nav>
 
     <main class="notfound">
-        <div class="notfound-code">Error 404</div>
-        <h1>We couldn't find that page</h1>
-        <p>The link may be out of date, or the page may have moved. Everything else is still where you left it.</p>
+        <div class="notfound-code">404</div>
+        <h1>Page not found</h1>
+        <p>This link may be out of date, or the page may have moved.</p>
         <a href="/" class="cta-button">Back to Home</a>
-        <div class="notfound-links">
-            <a href="/#features">Features</a>
-            <a href="/#faq">FAQs</a>
-            <a href="/#contact">Contact Us</a>
-            <a href="https://app.camplicity.app/">Login</a>
-        </div>
     </main>
 
     <footer class="footer">
@@ -110,7 +105,7 @@
             <a href="https://camplicity.app">
                 <img src="/media/camplicity-logo-500x200.svg" alt="Camplicity" class="footer-logo">
             </a>
-            <p class="footer-tagline">Making summer camp management<br>simple, natural, and joyful.</p>
+            <p class="footer-tagline">Making summer camp management simple</p>
         </div>
         <div class="footer-nav">
             <div class="footer-col">
@@ -123,6 +118,7 @@
                 <h4 class="footer-col-heading">Legal</h4>
                 <a href="/privacy-policy/" class="footer-link">Privacy Policy</a>
                 <a href="/terms-of-use/" class="footer-link">Terms of Use</a>
+                <a href="/logo/" class="footer-link">Brand Assets</a>
             </div>
         </div>
     </div>
@@ -149,7 +145,7 @@
             <a href="/#faq" class="mobile-menu-link">FAQs</a>
         </nav>
         <div class="mobile-menu-ctas">
-            <a href="/#contact" class="mobile-cta-primary">Contact Us &rsaquo;</a>
+            <a href="https://cal.com/camplicity/30min" class="mobile-cta-primary">Book a Demo &rsaquo;</a>
             <a href="https://app.camplicity.app/" class="mobile-cta-secondary">Login</a>
         </div>
     </div>
