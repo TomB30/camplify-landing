@@ -311,22 +311,14 @@ body {
 }
 
 .hero p.hero-slogan {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: baseline;
-    gap: 0.35em;
     max-width: none;
     margin: 0 0 16px;
-    font-size: clamp(20px, 2vw, 28px);
+    font-size: clamp(28px, 2.8vw, 40px);
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.15;
     letter-spacing: -0.03em;
     color: #fff;
     white-space: nowrap;
-}
-
-.hero-slogan-fixed {
-    color: rgba(255, 255, 255, 0.94);
 }
 
 .hero-rotating-word {
@@ -1550,10 +1542,6 @@ body {
         text-align: center;
     }
 
-    .hero p.hero-slogan {
-        justify-content: center;
-    }
-
     .hero-rotating-word {
         text-align: center;
     }
@@ -1582,15 +1570,6 @@ body {
         width: 20%;
         min-width: 108px;
         max-width: 136px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero p.hero-slogan {
-        white-space: normal;
-        flex-wrap: wrap;
-        justify-content: center;
-        row-gap: 0;
     }
 }
 
