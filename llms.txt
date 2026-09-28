@@ -23,8 +23,10 @@ Camp directors, administrators, and operations staff at day camps and overnight 
 - Homepage: https://camplicity.app/
 - Logo: https://camplicity.app/logo/
 - Logo file (SVG): https://camplicity.app/media/camplicity-logo-500x200.svg
-- Privacy Policy: https://camplicity.app/privacy-policy/
-- Terms of Use: https://camplicity.app/terms-of-use/
+- Privacy Policy: https://app.camplify.app/legal/privacy-policy
+- Website Terms of Use: https://app.camplify.app/legal/website-terms
+- SaaS Terms: https://app.camplify.app/legal/saas-terms
+- Data Processing Addendum: https://app.camplify.app/legal/dpa
 
 ## Contact
 
