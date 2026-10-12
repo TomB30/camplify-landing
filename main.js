@@ -83,7 +83,6 @@ document.querySelectorAll('.features-integrations-copy, .integration-orbit').for
 const contactFormEl = document.getElementById('contactForm');
 const requestTypeInput = document.getElementById('requestType');
 const formSubjectInput = document.getElementById('formSubject');
-const campNameInput = document.getElementById('campName');
 const messageField = document.getElementById('messageField');
 const messageInput = document.getElementById('message');
 const termsField = document.getElementById('termsField');
@@ -109,13 +108,11 @@ function setRequestType(type) {
 
     if (messageInput) {
         messageInput.disabled = isTrial;
+        messageInput.required = !isTrial;
     }
     if (termsInput) {
         termsInput.disabled = !isTrial;
         termsInput.required = isTrial;
-    }
-    if (campNameInput) {
-        campNameInput.name = isTrial ? 'camp_name' : 'campName';
     }
     if (requestTypeInput) {
         requestTypeInput.value = isTrial ? '14-day trial' : 'contact';
@@ -191,33 +188,14 @@ if (contactFormEl) {
     }
 }
 
-const TERMS_MONTHS = {
-    january: '01', february: '02', march: '03', april: '04',
-    may: '05', june: '06', july: '07', august: '08',
-    september: '09', october: '10', november: '11', december: '12'
-};
-
-async function versionOpenedAt(url) {
-    const response = await fetch(url, { cache: 'no-store' });
-    if (!response.ok) return '';
-    const html = await response.text();
-    const meta = html.match(/<meta\s+name="legal-version"\s+content="(\d{4}-\d{2}-\d{2})"\s*\/?>/i);
-    const visible = html.match(/Last updated:<\/strong>\s*([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})/i);
-    if (!meta || !visible) return '';
-    const month = TERMS_MONTHS[visible[1].toLowerCase()];
-    if (!month) return '';
-    const fromPage = `${visible[3]}-${month}-${String(visible[2]).padStart(2, '0')}`;
-    return fromPage === meta[1] ? fromPage : '';
-}
-
 document.querySelectorAll('#contactForm').forEach(contactForm => {
-    contactForm.addEventListener('submit', async function (e) {
+    contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
         if (this.dataset.submitting === 'true') return;
 
         const formData = new FormData(this);
         const requestType = String(formData.get('request_type') || '');
-        const campName = String(formData.get('camp_name') || formData.get('campName') || '').trim();
+        const campName = String(formData.get('camp_name') || '').trim();
         const isTrial = requestType === '14-day trial';
         if (isTrial) {
             const termsBox = this.querySelector('#agreeTerms');
@@ -250,10 +228,11 @@ document.querySelectorAll('#contactForm').forEach(contactForm => {
 
         if (isTrial) {
             const termsLink = this.querySelector('a[href="/saas-terms/"]');
-            const saasTermsVersion = termsLink ? await versionOpenedAt(termsLink.href) : '';
-            if (!saasTermsVersion || !termsLink) {
+            const saasTermsVersion = termsLink ? termsLink.dataset.termsVersion || '' : '';
+            if (!/^\d{4}-\d{2}-\d{2}$/.test(saasTermsVersion)) {
                 restoreButton();
-                alert('Could not read the SaaS Terms version. Open the SaaS Terms link and try again.');
+                alert('Something went wrong on our side. Please email contact@camplicity.app to request your trial.');
+                console.error('SaaS Terms link is missing data-terms-version; run npm run render-legal.');
                 return;
             }
             formData.set('_subject', campName ? `14-day trial request — ${campName}` : '14-day trial request');

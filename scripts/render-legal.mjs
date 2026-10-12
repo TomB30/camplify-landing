@@ -1,21 +1,20 @@
 // Rebuild the public legal pages from legal/*.md.
 // Run from the landing repo:
-//   node scripts/render-legal.mjs
+//   npm install
+//   npm run render-legal
 //
-// marked is already installed for the product app. This imports that copy
-// so the landing site does not need its own dependency.
+// Besides the legal pages, this writes the SaaS Terms version into the trial
+// form in index.html, and copies the main.css and layout.js versions from
+// index.html into the other static pages.
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
-import { fileURLToPath, pathToFileURL } from "node:url";
+import { fileURLToPath } from "node:url";
+import { marked } from "marked";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const markedUrl = pathToFileURL(
-    join(root, "../camplify/frontend/node_modules/marked/lib/marked.esm.js"),
-).href;
-const { marked } = await import(markedUrl);
 
-const indexHtml = readFileSync(join(root, "index.html"), "utf8");
+let indexHtml = readFileSync(join(root, "index.html"), "utf8");
 const cssVersion = indexHtml.match(/main\.css\?v=(\d+)/)?.[1];
 const layoutVersion = indexHtml.match(/layout\.js\?v=(\d+)/)?.[1];
 if (!cssVersion || !layoutVersion) {
@@ -198,4 +197,21 @@ for (const doc of documents) {
     const body = marked.parse(markdown, { async: false, breaks: true }).trim().replace(/^/gm, "            ");
     writeFileSync(join(root, doc.out), page(doc, body));
     console.log(`${doc.source} -> ${doc.out}`);
+}
+
+const saasTerms = documents.find((doc) => doc.path === "/saas-terms/");
+const termsLink = /(<a href="\/saas-terms\/" data-terms-version=")[^"]*(")/;
+if (!termsLink.test(indexHtml)) {
+    throw new Error('index.html is missing <a href="/saas-terms/" data-terms-version="...">');
+}
+indexHtml = indexHtml.replace(termsLink, `$1${saasTerms.version}$2`);
+writeFileSync(join(root, "index.html"), indexHtml);
+console.log(`index.html trial form -> SaaS Terms ${saasTerms.version}`);
+
+for (const file of ["404.html", "logo/index.html"]) {
+    const html = readFileSync(join(root, file), "utf8")
+        .replace(/main\.css\?v=\d+/g, `main.css?v=${cssVersion}`)
+        .replace(/layout\.js\?v=\d+/g, `layout.js?v=${layoutVersion}`);
+    writeFileSync(join(root, file), html);
+    console.log(`${file} -> main.css v${cssVersion}, layout.js v${layoutVersion}`);
 }
