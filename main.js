@@ -80,12 +80,193 @@ document.querySelectorAll('.features-integrations-copy, .integration-orbit').for
     observer.observe(el);
 });
 
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
+const contactFormEl = document.getElementById('contactForm');
+const requestTypeInput = document.getElementById('requestType');
+const formSubjectInput = document.getElementById('formSubject');
+const campNameInput = document.getElementById('campName');
+const messageField = document.getElementById('messageField');
+const messageInput = document.getElementById('message');
+const termsField = document.getElementById('termsField');
+const termsInput = document.getElementById('agreeTerms');
+const formSubmit = document.getElementById('formSubmit');
+const formSuccessTitle = document.getElementById('formSuccessTitle');
+const formSuccessText = document.getElementById('formSuccessText');
+const contactSuccess = document.getElementById('contactSuccess');
+
+function setRequestType(type) {
+    const isTrial = type === 'trial';
+    const requestTypeGroup = document.querySelector('.request-type');
+    if (requestTypeGroup) requestTypeGroup.classList.toggle('is-contact', !isTrial);
+
+    if (messageField) {
+        messageField.classList.toggle('is-open', !isTrial);
+        messageField.setAttribute('aria-hidden', isTrial ? 'true' : 'false');
+    }
+    if (termsField) {
+        termsField.classList.toggle('is-open', isTrial);
+        termsField.setAttribute('aria-hidden', isTrial ? 'false' : 'true');
+    }
+
+    if (messageInput) {
+        messageInput.disabled = isTrial;
+    }
+    if (termsInput) {
+        termsInput.disabled = !isTrial;
+        termsInput.required = isTrial;
+    }
+    if (campNameInput) {
+        campNameInput.name = isTrial ? 'camp_name' : 'campName';
+    }
+    if (requestTypeInput) {
+        requestTypeInput.value = isTrial ? '14-day trial' : 'contact';
+    }
+    if (formSubjectInput) {
+        formSubjectInput.value = isTrial ? '14-day trial request' : 'New message from the website';
+    }
+    if (formSubmit && !formSubmit.disabled) {
+        formSubmit.textContent = isTrial ? 'Request my free trial' : 'Send message';
+    }
+    if (contactSuccess) {
+        contactSuccess.dataset.persist = isTrial ? 'true' : 'false';
+    }
+    if (formSuccessTitle && formSuccessText) {
+        formSuccessTitle.textContent = isTrial ? 'Thanks!' : 'Thank you for your interest!';
+        formSuccessText.textContent = isTrial
+            ? "We'll take a quick look at your request and email you a link to start your trial within 24 hours."
+            : "We'll review your message and email you within 24 hours.";
+    }
+    syncTrialSubmitLock();
+}
+
+function syncTrialSubmitLock() {
+    if (!formSubmit || !contactFormEl) return;
+    const selected = contactFormEl.querySelector('input[name="type"]:checked');
+    const isTrial = !selected || selected.value === 'trial';
+    const locked = isTrial && !(termsInput && termsInput.checked);
+    formSubmit.classList.toggle('is-locked', locked);
+    formSubmit.setAttribute('aria-disabled', locked ? 'true' : 'false');
+    if (!locked) {
+        formSubmit.closest('.submit-wrap')?.classList.remove('is-hint');
+    }
+}
+
+if (contactFormEl) {
+    contactFormEl.querySelectorAll('input[name="type"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+            if (radio.checked) setRequestType(radio.value);
+        });
+    });
+    const contactFromHash = location.hash === '#contact-us';
+    if (contactFromHash) {
+        const contactRadio = contactFormEl.querySelector('input[name="type"][value="contact"]');
+        if (contactRadio) contactRadio.checked = true;
+    }
+    const selectedType = contactFormEl.querySelector('input[name="type"]:checked');
+    if (selectedType) setRequestType(selectedType.value);
+
+    window.addEventListener('hashchange', () => {
+        if (location.hash !== '#contact-us') return;
+        const contactRadio = contactFormEl.querySelector('input[name="type"][value="contact"]');
+        if (!contactRadio) return;
+        contactRadio.checked = true;
+        setRequestType('contact');
+    });
+
+    contactFormEl.addEventListener('reset', () => {
+        setTimeout(() => {
+            const selected = contactFormEl.querySelector('input[name="type"]:checked');
+            if (selected) setRequestType(selected.value);
+        }, 0);
+    });
+
+    if (termsInput) {
+        termsInput.addEventListener('change', syncTrialSubmitLock);
+    }
+    if (formSubmit) {
+        formSubmit.addEventListener('click', (event) => {
+            if (!formSubmit.classList.contains('is-locked')) return;
+            event.preventDefault();
+            formSubmit.closest('.submit-wrap')?.classList.add('is-hint');
+        });
+    }
+}
+
+const TERMS_MONTHS = {
+    january: '01', february: '02', march: '03', april: '04',
+    may: '05', june: '06', july: '07', august: '08',
+    september: '09', october: '10', november: '11', december: '12'
+};
+
+async function versionOpenedAt(url) {
+    const response = await fetch(url, { cache: 'no-store' });
+    if (!response.ok) return '';
+    const html = await response.text();
+    const meta = html.match(/<meta\s+name="legal-version"\s+content="(\d{4}-\d{2}-\d{2})"\s*\/?>/i);
+    const visible = html.match(/Last updated:<\/strong>\s*([A-Za-z]+)\s+(\d{1,2}),\s*(\d{4})/i);
+    if (!meta || !visible) return '';
+    const month = TERMS_MONTHS[visible[1].toLowerCase()];
+    if (!month) return '';
+    const fromPage = `${visible[3]}-${month}-${String(visible[2]).padStart(2, '0')}`;
+    return fromPage === meta[1] ? fromPage : '';
+}
+
+document.querySelectorAll('#contactForm').forEach(contactForm => {
+    contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
+        if (this.dataset.submitting === 'true') return;
 
         const formData = new FormData(this);
+        const requestType = String(formData.get('request_type') || '');
+        const campName = String(formData.get('camp_name') || formData.get('campName') || '').trim();
+        const isTrial = requestType === '14-day trial';
+        if (isTrial) {
+            const termsBox = this.querySelector('#agreeTerms');
+            if (termsBox) {
+                termsBox.disabled = false;
+                termsBox.required = true;
+            }
+            if (!termsBox || !termsBox.checked || !this.checkValidity()) {
+                this.reportValidity();
+                return;
+            }
+        } else if (!this.checkValidity()) {
+            this.reportValidity();
+            return;
+        }
+
+        this.dataset.submitting = 'true';
+        const submitButton = this.querySelector('[type="submit"]');
+        const submitLabel = submitButton ? submitButton.textContent : '';
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending…';
+        }
+        const restoreButton = () => {
+            this.dataset.submitting = '';
+            if (!submitButton) return;
+            submitButton.disabled = false;
+            submitButton.textContent = submitLabel;
+        };
+
+        if (isTrial) {
+            const termsLink = this.querySelector('a[href="/saas-terms/"]');
+            const saasTermsVersion = termsLink ? await versionOpenedAt(termsLink.href) : '';
+            if (!saasTermsVersion || !termsLink) {
+                restoreButton();
+                alert('Could not read the SaaS Terms version. Open the SaaS Terms link and try again.');
+                return;
+            }
+            formData.set('_subject', campName ? `14-day trial request — ${campName}` : '14-day trial request');
+            formData.set('saas_terms_version', saasTermsVersion);
+            formData.set('saas_terms_url', termsLink.href);
+            formData.set('message', [
+                'FREE TRIAL REQUEST',
+                `Agreed to the Camplicity SaaS Terms, version ${saasTermsVersion}.`,
+                termsLink.href,
+            ].join('\n'));
+        } else if (campName) {
+            formData.set('_subject', `Contact — ${campName}`);
+        }
 
         fetch(this.action || 'https://formspree.io/f/xlgggvna', {
             method: 'POST',
@@ -98,22 +279,28 @@ if (contactForm) {
                 throw new Error('Form submission failed');
             }
 
-            const successMsg = document.getElementById('successMessage');
+            const successMsg = document.getElementById(this.dataset.success);
             if (successMsg) {
                 successMsg.classList.add('show');
                 successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                if (successMsg.dataset.persist === 'true') {
+                    this.hidden = true;
+                    return;
+                }
                 setTimeout(() => {
                     successMsg.classList.remove('show');
                 }, 5000);
             }
 
             this.reset();
+            restoreButton();
         }).catch(error => {
+            restoreButton();
             alert('Failed to send message. Please try again.');
             console.error(error);
         });
     });
-}
+});
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -124,6 +311,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (!target) return;
 
         e.preventDefault();
+        if (href === '#contact-us' && contactFormEl) {
+            const contactRadio = contactFormEl.querySelector('input[name="type"][value="contact"]');
+            if (contactRadio) {
+                contactRadio.checked = true;
+                setRequestType('contact');
+            }
+        }
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 });
