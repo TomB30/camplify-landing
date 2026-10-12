@@ -1,0 +1,11 @@
+{
+  "name": "camplify-landing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "render-legal": "node scripts/render-legal.mjs"
+  },
+  "devDependencies": {
+    "marked": "18.0.13"
+  }
+}

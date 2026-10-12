@@ -1,0 +1,255 @@
+# Camplicity SaaS Terms
+
+**Last updated:** September 18, 2026
+**Company:** Camplicity LLC, a Georgia limited liability company (“**Camplicity**,” “**we**,” “**us**”)
+**Customer:** the organization that buys or uses the Camplicity software (“**Customer**,” “**you**”)
+
+These SaaS Terms (the “**Terms**”) are a business-to-business agreement. They govern access to and use of the Camplicity software platform, related APIs, support, and any trial (the “**Services**”).
+
+They may be accepted by checkout, an order form or quote you confirm, electronic signature, or another method that records your assent. The person who accepts represents they have authority to bind Customer.
+
+The website is governed by the Website Terms of Use. **These Terms control over the Website Terms for paid or trial use of the Services.** Our Privacy Policy describes our privacy practices. The Camplicity Data Processing Addendum (“**DPA**”) is incorporated into these Terms and governs our processing of Customer Data subject to applicable privacy law.
+
+If documents conflict, the following order controls for the subject of the conflict: (1) the DPA for the processing and security of Customer Data; (2) an order form that expressly identifies the provision it overrides; (3) these Terms; and (4) the Website Terms. The Privacy Policy provides notice and does not reduce contractual obligations in the DPA or these Terms.
+
+---
+
+
+
+## 1. The Services
+
+We grant Customer a limited, non-exclusive, non-transferable, non-sublicensable right during the subscription term to use the Services only for Customer’s internal camp operations. We own the software, workflows, interfaces, documentation, and all improvements. No other rights are granted.
+
+The Services are operations software. They are **not** legal, medical, or childcare-licensing advice. We have **no duty** to supervise, protect, warn, transport, house, or care for any camper, staff member, parent, or visitor. The Services are not an electronic health record, medication system, emergency system, or life-safety system. Do not use them as your sole system for medical care, emergency response, or child supervision.
+
+We may change the Services in a commercially reasonable way. If a change materially reduces paid core functionality, tell us within 30 days; if we do not restore comparable functionality, you may stop the affected Services and receive a pro-rata refund of prepaid unused fees for that portion.
+
+Support is commercially reasonable email or in-app support. Response and resolution times vary with severity and availability. There is no uptime SLA, guaranteed response time, or service credit unless an order form expressly provides one. Beta or preview features are provided AS IS and may be withdrawn.
+
+We are not CampMinder and are not affiliated with CampMinder.
+
+The Services are hosted in the United States. Do not use them for GDPR/UK GDPR personal data unless we sign a separate addendum.
+
+---
+
+
+
+## 2. Accounts
+
+Customer will designate administrators. Customer is responsible for everyone it allows to use the Services (“**Authorized Users**”) and for all activity under its accounts.
+
+Authorized Users must be at least 18 and authorized by Customer. Campers and parents are not Authorized Users.
+
+Keep credentials confidential, do not share logins, configure roles using least privilege, and tell us promptly of suspected unauthorized access. We may recommend or require multi-factor authentication for particular accounts after giving reasonable implementation instructions, but these Terms do not represent that multi-factor authentication is currently enforced for every account.
+
+We may suspend a user who poses a security risk or violates Section 6.
+
+---
+
+
+
+## 3. Customer Data
+
+**“Customer Data”** is information submitted, uploaded, imported, or synced to the Services by or for Customer, including data pulled from CampMinder or another system at Customer’s direction, and AI outputs generated from that information. It may include information about minors, staff, photos, and allergy or dietary labels if Customer provides them.
+
+As between the parties, Customer retains all rights it has in Customer Data. These Terms do not determine ownership or privacy rights between Customer and the individuals described by Customer Data.
+
+Customer grants Camplicity a limited license to host, copy, process, display, back up, secure, support, and otherwise use Customer Data only to: (a) provide and maintain the Services; (b) prevent security incidents, fraud, and misuse; (c) comply with law; and (d) create aggregated or de-identified data that does not identify Customer or any individual. That license continues after the subscription only for as long as we still hold the data under Section 10.
+
+We process Customer Data as a **service provider or processor** as described in the DPA. Customer decides what to put in the Services and the purposes and lawful basis for collecting it. We do not independently decide which campers, parents, or staff members Customer enters, and we are not responsible for how Customer originally collected or uses that information.
+
+**Customer is responsible for having all rights, notices, permissions, consents, and legal authority** — including for minors, staff, photos, and dietary information — **before** providing or importing Customer Data. We are not responsible for the legality, accuracy, or completeness of Customer Data merely because we process or display it.
+
+We will not sell Customer Data or use it for targeted advertising. We do not train AI models on Customer Data.
+
+We may use subprocessors as described in the DPA and remain responsible for their performance of our data-processing obligations to the same extent we would be responsible if we performed them ourselves, subject to Section 13. CampMinder and other systems Customer directs us to connect to are generally **Customer’s** providers, not our subprocessors for their independent processing.
+
+We may generate and use service-usage metrics and aggregated or de-identified data to operate, secure, analyze, and improve the Services. We will not try to re-identify de-identified data except to test and maintain de-identification. If Customer Data appears in logs, prompts, or support materials, we use that content only as allowed by these Terms and the DPA.
+
+Do not submit Social Security numbers, government ID numbers, or payment-card PAN to the Services.
+
+Customer will not require us to act as a HIPAA business associate or a FERPA school official unless we sign a separate agreement. Allergy and dietary labels remain Customer Data and may be sensitive personal information under applicable law.
+
+If a parent, camper, or staff member contacts us about Customer Data, we will point them to Customer. Customer handles those requests. We will reasonably assist.
+
+---
+
+
+
+## 4. Integrations
+
+If Customer connects CampMinder or another third-party service, Customer authorizes us to retrieve and process the data reasonably needed for that integration, using credentials Customer supplies.
+
+Customer represents it has the right to connect that account and **will comply** with that provider’s terms and API rules. Importing data does not change ownership; it remains Customer Data.
+
+We do not control third-party APIs. They may change, break, or end. We are not responsible for their outages, terms, or inaccuracies **in data as we receive it**. We remain responsible for our own integration mechanism, subject to these Terms. If a provider withdraws access, we may disable the integration.
+
+Customer must promptly rotate or revoke integration credentials after suspected compromise, when access is no longer needed, or when the provider requires it. We will use stored credentials only to provide the directed integration or as required by law and will protect credentials in our possession under Section 8.
+
+---
+
+
+
+## 5. AI features
+
+AI features are optional, may be available only on eligible plans, and may not be available in every environment. We currently use OpenAI to provide available generative-AI features, but may replace it with another provider under the DPA’s subprocessor process. An Authorized User’s invocation of an AI feature is Customer’s instruction to send the prompt, recent conversation context, relevant tool or draft information, and generated output to the provider solely to provide and secure that feature.
+
+We do not use Customer Data to train general-purpose AI models. We contractually restrict an AI subprocessor from using Customer Data for its independent purposes to the extent required by the DPA and applicable law.
+
+AI outputs are Customer Data as between us. Outputs can be incomplete, inaccurate, or inappropriate. Customer must review outputs and confirm proposed writes before relying on them for staffing, housing, medical, disciplinary, safety, or other consequential decisions. AI features are not a substitute for qualified human judgment.
+
+---
+
+
+
+## 6. Acceptable use
+
+Customer will use the Services only as allowed by these Terms and law, configure roles and integrations carefully, keep a current admin email, and keep its own copies of data it needs.
+
+Customer will not: use the Services unlawfully; provide data it has no right to provide; probe, disrupt, or security-test the Services without our written consent; reverse engineer except as the law allows; resell the Services or run them as a bureau for unaffiliated camps; build a competing product from the Services; claim we are affiliated with CampMinder; or allow children to log in.
+
+---
+
+
+
+## 7. Fees, term, renewal, cancellation
+
+Fees are in U.S. dollars, billed **annually in advance**, and **non-refundable** except where these Terms or law require a refund.
+
+If you pay by card or stored method, you authorize Camplicity and Stripe to charge that method when fees are due, including renewals unless you timely cancel. We do not store complete card numbers.
+
+Invoices are due in 30 days. Late undisputed amounts may accrue 1.5% per month or the maximum Georgia law allows, whichever is less. You may dispute an invoice in good faith within 30 days; pay the rest. You may not set off fees against other claims. If undisputed fees are overdue, we may suspend all platform access immediately after notice. There is no continued login, and no post-suspension access period, while fees remain unpaid.
+
+The subscription starts when you accept these Terms and pay (or when a confirmed order form says). Unless an order form says otherwise, the term is one year and **renews automatically for successive one-year terms** unless either party gives notice of non-renewal at least 30 days before the term ends.
+
+If we change the renewal price, we will give at least 30 days’ notice. If you do not timely cancel, the term renews at that price.
+
+**You may cancel at any time** by emailing [contact@camplicity.app](mailto:contact@camplicity.app). We will send a confirmation after processing the request. Cancellation stops auto-renewal and takes effect at the end of the current paid term. It does **not** refund prepaid fees for the current term, except as these Terms expressly provide or as required by law.
+
+Trials are AS IS. Either party may end a trial as the trial terms say. Do not use a trial as your only system of record.
+
+Taxes are extra, except taxes on our income. Provide an exemption certificate if you have one.
+
+---
+
+
+
+## 8. Security
+
+We will maintain administrative, technical, and organizational safeguards designed to protect Customer Data against unauthorized access, use, alteration, and disclosure. Current safeguards are described in the DPA and include, where applicable, Auth0-based authentication, role-based authorization, tenant and camp scoping, protected cloud storage, encrypted transport for production services, encryption of stored integration credentials, logging, and access controls.
+
+Security is a shared responsibility. Customer is responsible for its devices, networks, user lifecycle, password and identity-provider security, role assignments, exports, and lawful configuration and use of the Services.
+
+We do not represent that the Services have a particular certification, audit report, penetration-testing schedule, uptime level, recovery objective, or security feature unless an order form or published security addendum expressly says so. The Services are not offered as HIPAA, FERPA, or PCI compliant.
+
+If we determine that unauthorized access to or acquisition, alteration, loss, or disclosure of Customer Data in our possession has compromised its security, confidentiality, or integrity (a “**Security Incident**”), we will notify Customer’s then-current admin email without undue delay as required by applicable law and the DPA. We will investigate, take reasonable containment and remediation measures, and provide information reasonably available to help Customer meet its legal obligations. We may provide information in phases as the investigation develops.
+
+Unsuccessful attempts, scans, denial-of-service attempts, and events that do not compromise Customer Data are not Security Incidents. Customer is responsible for notices to campers, parents, staff, and regulators unless applicable law requires us to notify them directly. Neither notice nor cooperation is an admission of fault or liability.
+
+---
+
+
+
+## 9. Confidentiality and IP
+
+Each party will protect the other’s non-public information with at least reasonable care, disclose it only to personnel and contractors who need it and are bound by confidentiality duties, and use it only to perform or exercise rights under these Terms. Customer Data is Customer’s confidential information. Our software, security information, and non-public pricing are ours.
+
+Confidential information does not include information the recipient can document: (a) is public through no breach; (b) was lawfully known without restriction before disclosure; (c) is received lawfully from another source without confidentiality duty; or (d) was independently developed without use of the discloser’s information. A recipient may disclose information as legally required after giving advance notice where legally permitted and reasonable assistance, at the discloser’s expense, if the discloser seeks protection.
+
+These duties last 3 years after the Terms end; duties for Customer Data, personal information, and trade secrets last as long as the information remains protected by applicable law or qualifies as a trade secret. This section does not create a right to retain Customer Data beyond Section 10 and the DPA.
+
+If you send feedback about the product, we may use it freely. Feedback does not include Customer Data.
+
+You grant us a limited license to show your name or logo **inside** the product to identify your workspace. We will not use your name in public marketing without your email consent.
+
+---
+
+
+
+## 10. Export and deletion
+
+You may export supported Customer Data through product tools while access is active. Product exports are provided by entity or report and may not reproduce every configuration, audit record, attachment, integration secret, or relationship in the Services. Customer is responsible for keeping independent copies needed for continuity, legal retention, or safety.
+
+We do not provide platform login after the subscription ends or while access is suspended. If Customer sends a written request to contact@camplicity.app within 30 days after access ends, we will provide one export of the Customer Data then reasonably available to us in our standard machine-readable format. The export is not a right to log in. We may charge a reasonable fee agreed in advance for a custom format, repeated export, or material work beyond the standard export. We may verify the requester’s authority and use secure delivery procedures.
+
+No earlier than the end of the 30-day export-request period, unless Customer requests earlier deletion, and within 60 days after access ends, we will delete Customer Data from active production systems or render it permanently de-identified, except information we must retain by law and usage, aggregated, or de-identified information permitted by Section 3. Customer Data may remain in access-restricted backups until overwritten or deleted through our ordinary backup lifecycle. If a backup is restored, the retained Customer Data remains protected by these Terms and will not be used for another purpose.
+
+The export and deletion periods do not provide continued access to the Services. Backups are maintained for operational recovery, not as Customer’s archive. We may retain and use Customer Data after access ends only as this section, the DPA, or applicable law permits.
+
+---
+
+
+
+## 11. Warranties and disclaimers
+
+Each party represents it has authority to enter these Terms. You represent you have all rights, notices, consents, and authority to provide Customer Data, including information about minors and staff and their photos.
+
+We warrant that during the paid term we will provide the Services in a professional and workmanlike manner consistent with ordinary SaaS practice. If we breach that warranty, we will use commercially reasonable efforts to fix it or, if we cannot in a reasonable time, you may end the affected Services and receive a pro-rata refund of prepaid unused fees for that portion. That is the exclusive remedy for that warranty.
+
+EXCEPT AS EXPRESSLY STATED IN THESE TERMS, THE SERVICES ARE PROVIDED “AS IS” AND “AS AVAILABLE.” TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE DISCLAIM ALL OTHER WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT. WE DO NOT WARRANT UNINTERRUPTED OR ERROR-FREE OPERATION, THAT THE SERVICES WILL MEET LICENSING OR ACCREDITATION REQUIREMENTS, THAT THEY WILL PREVENT INJURY, OR THAT SCHEDULING OUTPUTS ARE COMPLETE OR APPROPRIATE FOR ANY CAMPER OR STAFF MEMBER.
+
+---
+
+
+
+## 12. Indemnity
+
+**By Customer.** Customer will defend Camplicity and its officers, directors, employees, and contractors, and pay damages and reasonable attorneys’ fees finally awarded or included in a settlement Customer approves, not to be unreasonably withheld, for a third-party claim arising from: (a) Customer Data as collected or provided by Customer; (b) Customer’s or its Authorized Users’ use of the Services in material violation of these Terms; (c) Customer’s violation of law or third-party rights, including failure to provide required notices or obtain required rights, consents, or authority for information about minors, staff, parents, or photos; (d) Customer’s unlawful instructions to us; (e) a system Customer connects or credentials Customer supplies; or (f) Customer’s camp operations, supervision, housing, transportation, meals, medical care, or safety decisions. Customer has no obligation under this paragraph to the extent a claim results from Camplicity’s material breach of these Terms or the DPA, gross negligence, or willful misconduct.
+
+**By Camplicity.** We will defend Customer against a third-party claim that the Services, as we provide them and as Customer uses them in accordance with these Terms, infringe a U.S. patent, copyright, or trademark, or misappropriate a U.S. trade secret, and will pay damages and reasonable attorneys’ fees finally awarded or included in a settlement we approve. We may obtain a license, modify or replace the affected Services, or end them and refund prepaid unused fees. We have no duty for claims arising from Customer Data, third-party services, combinations or modifications we did not make, continued use after notice to stop, or use that violates these Terms.
+
+The defended party must give prompt notice (delay matters only if it actually prejudices the defense), reasonably cooperate, and let the defending party control the defense and settlement. No settlement may impose an admission or unindemnified obligation on the other party without consent, not unreasonably withheld.
+
+---
+
+
+
+## 13. Limitation of liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, EXCEPT FOR YOUR INDEMNITY OBLIGATIONS IN SECTION 12, NEITHER PARTY IS LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES, OR FOR LOST PROFITS, REVENUE, GOODWILL, BUSINESS INTERRUPTION, OR DATA, EVEN IF ADVISED THEY WERE POSSIBLE.
+
+EXCEPT FOR THE SUPER-CAP AND THE UNCAPPED ITEMS BELOW, EACH PARTY’S AGGREGATE LIABILITY ARISING OUT OF OR RELATING TO THE SERVICES, THESE TERMS, ALL ORDER FORMS, AND THE DPA WILL NOT EXCEED THE AMOUNTS **ACTUALLY PAID** BY CUSTOMER TO CAMPLICITY FOR THE SERVICES IN THE TWELVE (12) MONTHS BEFORE THE FIRST EVENT GIVING RISE TO THE CLAIM OR SERIES OF RELATED CLAIMS (THE “**GENERAL CAP**”). IF CUSTOMER HAS PAID NO FEES IN THAT PERIOD, THE GENERAL CAP IS TEN THOUSAND U.S. DOLLARS (US $10,000), EXCEPT THAT FOR A FREE TRIAL THE CAP IS TWO THOUSAND FIVE HUNDRED U.S. DOLLARS (US $2,500).
+
+**Super-cap.** Our aggregate liability for (a) a Security Incident caused by our material failure to meet Section 8 or the DPA and (b) our breach of confidentiality as to Customer Data, combined, will not exceed **two times (2×)** the General Cap (the “**Super-Cap**”). Direct, documented, reasonable, out-of-pocket forensic, legally required notification, and legally required credit-monitoring costs Customer incurs because of such a Security Incident are within the Super-Cap and are not excluded as “lost data.” Lost profits, business interruption, and replacement-system costs remain excluded.
+
+Nothing in this section limits: (a) a party’s fraud or willful misconduct; (b) your payment obligations; (c) your indemnity obligations in Section 12; or (d) liability that cannot be limited under law. Our IP indemnity in Section 12 is not unlimited; it will not exceed the Super-Cap.
+
+These limits are a basis of the bargain. We would not provide the Services without them.
+
+---
+
+
+
+## 14. Suspension, termination, force majeure
+
+We may suspend access immediately if needed to protect the Services, other customers, or Customer Data; if use violates law or Section 6 in a material way; for non-payment under Section 7; or if required by law. We will restore access when the issue is fixed. Fees continue during a suspension you caused. We are not liable for a suspension that complies with this section.
+
+Either party may end these Terms if the other materially breaches and does not cure within 30 days after notice (10 days for undisputed non-payment). You may stop renewal under Section 7. Prepaid fees are refundable only as these Terms say.
+
+If we discontinue the Services, we will give at least 60 days’ notice and refund prepaid unused fees.
+
+Neither party is liable for delay or failure caused by events beyond its reasonable control, including widespread internet, utility, or cloud-provider failures, except for payment obligations. A force-majeure event does not authorize either party to use or disclose confidential information for an unauthorized purpose, and legally required Security Incident notices remain due as applicable law requires. If the event materially prevents the affected Services for more than 60 consecutive days, either party may end them and Customer will receive a pro-rata refund of prepaid unused fees.
+
+---
+
+
+
+## 15. General
+
+**Notices.** Legal, cancellation, renewal, and privacy notices to us must be sent to [contact@camplicity.app](mailto:contact@camplicity.app). We may send notices to Customer’s then-current administrator email. Notice is effective when sent if it does not bounce, except a cancellation request is effective when received and will be confirmed under Section 7. Customer must keep its administrator email current.
+
+**Georgia law.** These Terms are governed by Georgia law, excluding conflict-of-law rules. The UCC and CISG do not apply; this is a services agreement. Exclusive venue is the state or federal courts in Georgia. Each party consents and waives forum non conveniens. The parties will try to resolve disputes in good faith for 30 days after notice, except that either party may seek an injunction to protect IP or confidential information immediately. There is no arbitration under these Terms.
+
+**Assignment.** You may not assign these Terms without our consent, except to a successor of substantially all of your camp operations that is not our competitor and that assumes these Terms in writing. We may assign to an affiliate or in a merger, acquisition, or sale of assets if the assignee assumes our obligations.
+
+**Entire agreement.** These Terms, the DPA, any order form or checkout record, and the Privacy Policy as a notice of our practices are the entire agreement for the Services and supersede prior terms on that subject, including marketing pages. Customer purchase-order, procurement-portal, or vendor terms are rejected unless an order form signed by Camplicity expressly accepts specific provisions.
+
+**Changes.** We may update these Terms or the DPA prospectively by posting a new version and notifying Customer’s administrator. A material reduction of Customer’s contractual rights or our data-protection obligations will not apply during the then-current term unless required by law or Customer agrees. Continued use in a renewal term constitutes agreement to the version identified in the renewal notice or checkout record.
+
+**Other.** We are independent contractors. No third-party beneficiaries exist except people expressly entitled to indemnity under Section 12. Headings are for convenience. “Including” means “including without limitation.” These Terms will not be construed against either party as drafter. If a provision is unenforceable, it will be enforced to the maximum lawful extent and the rest remains effective. Failure to enforce is not a waiver. Electronic acceptance is valid under E-SIGN and the Georgia UETA. Provisions that by their nature should survive include Sections 1 (disclaimers of duty), 3, 4, 8–13, 15, the DPA as it applies to retained data, and accrued payment obligations. If Customer is a U.S. public entity, additional terms may be required; these Terms are written for private camps and nonprofits.
+
+---
+
+Camplicity LLC
+Atlanta, Georgia
+[contact@camplicity.app](mailto:contact@camplicity.app)

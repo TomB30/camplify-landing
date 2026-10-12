@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./main.css?v=56">
+    <link rel="stylesheet" href="./main.css?v=68">
     <link rel="icon" href="./media/camplicity-icon-48x48.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="./media/apple-touch-icon.png">
     <script src="./layout.js?v=7" defer></script>
@@ -58,12 +58,12 @@
           "url": "https://camplicity.app/",
           "logo": "https://camplicity.app/media/camplicity-logo-500x200.svg",
           "image": "https://camplicity.app/media/og-image.jpg",
-          "email": "contact@camplify.app",
+          "email": "contact@camplicity.app",
           "description": "Summer camp management software for scheduling, housing, staff, and daily operations.",
           "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "sales",
-            "email": "contact@camplify.app",
+            "email": "contact@camplicity.app",
             "url": "https://camplicity.app/#contact",
             "availableLanguage": ["English"]
           }
@@ -123,7 +123,7 @@
               "name": "How are camper and staff records kept secure?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Your camp's records stay in a secure US-based environment, with encrypted connections and private photo storage. Only authorized staff can sign in — campers and parents don't get accounts — and access is limited by role. We never sell your data or use it for ads. We use trusted partners to host and run Camplicity; see our Privacy Policy for details: https://app.camplify.app/legal/privacy-policy"
+                "text": "Your camp's records stay in a secure US-based environment, with encrypted connections and private photo storage. Only authorized staff can sign in — campers and parents don't get accounts — and access is limited by role. We never sell your data or use it for ads. We use trusted partners to host and run Camplicity; see our Privacy Policy for details: https://camplicity.app/privacy-policy/"
               }
             },
             {
@@ -139,7 +139,7 @@
               "name": "How do I get started with Camplicity?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Getting started is easy. Fill out the contact form below and our team will reach out to learn about your camp's size and needs. Onboarding is guided and straightforward. Most camps are fully set up within a day."
+                "text": "Start a free 14-day trial, or leave your details and we'll get back to you shortly. We review every request personally and email you within 24 hours. For a trial, share your camp name and we'll email you a link to create an account."
               }
             },
             {
@@ -178,7 +178,7 @@
             </div>
             <div class="nav-right">
                 <a href="https://app.camplicity.app/" class="nav-btn-secondary nav-btn-desktop-only">Login</a>
-                <a href="https://cal.com/camplicity/30min" class="nav-btn-primary nav-btn-desktop-only">Book a Demo</a>
+                <a href="#contact" class="nav-btn-primary nav-btn-desktop-only">Let's Start</a>
                 <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="4" x2="20" y1="6" y2="6"/>
@@ -195,7 +195,7 @@
                     <span id="hero-rotating-word" class="hero-rotating-word">Full clarity.</span>
                 </p>
                 <p class="hero-lede">Everything you need to plan, manage, and run your camp.</p>
-                <a href="https://cal.com/camplicity/30min" class="cta-button">Book a Demo</a>
+                <a href="#contact" class="cta-button">Let's Start</a>
             </div>
             <div class="showcase-backdrop hero-showcase-backdrop">
                 <div class="showcase-duo">
@@ -1384,7 +1384,7 @@
             <div class="faq-header">
                 <span class="faq-label">FAQs</span>
                 <h2>Frequently Asked Questions</h2>
-                <p>Everything you need to know about Camplicity. Still have questions? <a href="#contact">Drop us a message</a>.</p>
+                <p>Everything you need to know about Camplicity. Still have questions? <a href="#contact">Contact us</a>.</p>
             </div>
             <div class="faq-list">
 
@@ -1424,7 +1424,7 @@
                         <span class="faq-icon"></span>
                     </summary>
                     <div class="faq-answer">
-                        <p>Your camp's records stay in a secure US-based environment, with encrypted connections and private photo storage. Only authorized staff can sign in — campers and parents don't get accounts — and access is limited by role. We never sell your data or use it for ads. We use trusted partners to host and run Camplicity; see our <a href="https://app.camplify.app/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> for details.</p>
+                        <p>Your camp's records stay in a secure US-based environment, with encrypted connections and private photo storage. Only authorized staff can sign in — campers and parents don't get accounts — and access is limited by role. We never sell your data or use it for ads. We use trusted partners to host and run Camplicity; see our <a href="/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a> for details.</p>
                     </div>
                 </details>
 
@@ -1444,7 +1444,7 @@
                         <span class="faq-icon"></span>
                     </summary>
                     <div class="faq-answer">
-                        <p>Getting started is easy. Fill out the contact form below and our team will reach out to learn about your camp's size and needs. Onboarding is guided and straightforward. Most camps are fully set up within a day.</p>
+                        <p>Start a free 14-day trial, or leave your details and we'll get back to you shortly. We review every request personally and email you within 24 hours. For a trial, share your camp name and we'll email you a link to create an account.</p>
                     </div>
                 </details>
 
@@ -1453,11 +1453,12 @@
     </section>
 
     <section class="contact-section" id="contact">
+        <div id="contact-us" class="contact-anchor" aria-hidden="true"></div>
         <div class="contact-section-inner">
-        <h2 class="section-title">Let's Make This Summer Unforgettable</h2>
-        <p class="contact-subtitle">Leave your details and we'll get back to you shortly.</p>
+        <h2 class="section-title">Let’s get your camp started</h2>
+        <p class="contact-subtitle">Start a free 14-day trial, or leave your details and we'll reach out.<br>We review every request personally and reply within 24 hours.</p>
         <div class="contact-form">
-            <div class="success-message" id="successMessage">
+            <div class="success-message" id="contactSuccess" data-persist="true">
                 <div class="success-icon">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -1465,11 +1466,26 @@
                     </svg>
                 </div>
                 <div class="success-content">
-                    <div class="success-title">Thank you for your interest!</div>
-                    <div class="success-text">We've received your request and will be in touch soon.</div>
+                    <div class="success-title" id="formSuccessTitle">Thanks!</div>
+                    <div class="success-text" id="formSuccessText">We'll take a quick look at your request and email you a link to start your trial within 24 hours.</div>
                 </div>
             </div>
-            <form id="contactForm" action="https://formspree.io/f/xlgggvna" method="POST">
+            <form id="contactForm" action="https://formspree.io/f/xlgggvna" method="POST" data-success="contactSuccess">
+                <input type="hidden" name="request_type" id="requestType" value="14-day trial">
+                <input type="hidden" name="_subject" id="formSubject" value="14-day trial request">
+                <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                <div class="request-type" role="radiogroup" aria-label="How would you like to start?">
+                    <label class="request-type-trial">
+                        <input type="radio" name="type" value="trial" checked>
+                        <span>Try it free for 14 days</span>
+                    </label>
+                    <label class="request-type-questions">
+                        <input type="radio" name="type" value="contact">
+                        <span>Contact Us</span>
+                    </label>
+                </div>
+
                 <div class="form-group">
                     <label for="name">Name *</label>
                     <input type="text" id="name" name="name" autocomplete="name" required>
@@ -1479,19 +1495,36 @@
                     <input type="email" id="email" name="email" autocomplete="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="campName">Camp Name</label>
-                    <input type="text" id="campName" name="campName" autocomplete="organization">
+                    <label for="campName">Camp name *</label>
+                    <input type="text" id="campName" name="camp_name" autocomplete="organization" required>
                 </div>
-                <div class="form-group">
-                    <label for="message">Tell Us About Your Camp</label>
-                    <textarea id="message" name="message" placeholder="Number of campers, staff size, specific needs..."></textarea>
+                <div class="form-conditional" id="messageField" aria-hidden="true">
+                    <div class="form-conditional-inner">
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" placeholder="What would you like to know?" disabled></textarea>
+                        </div>
+                    </div>
                 </div>
-                <button type="submit" class="submit-button">Submit</button>
+                <div class="form-conditional is-open" id="termsField">
+                    <div class="form-conditional-inner">
+                        <div class="terms-agree">
+                            <input type="checkbox" id="agreeTerms" name="agreed_to_saas_terms" value="yes" required aria-label="I agree to the SaaS Terms">
+                            <label for="agreeTerms">I agree to the</label>
+                            <a href="/saas-terms/" data-terms-version="2026-09-18" target="_blank" rel="noopener noreferrer">SaaS Terms</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-wrap">
+                    <button type="submit" class="submit-button is-locked" id="formSubmit" aria-disabled="true">Request my free trial</button>
+                    <p class="submit-terms-hint" id="submitTermsHint" role="tooltip">You must agree to the SaaS Terms</p>
+                </div>
                 <p class="form-legal">
-                    By submitting this form, you agree to our <a href="https://app.camplify.app/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                    By submitting this form, you acknowledge our <a href="/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
                 </p>
             </form>
         </div>
+        <p class="demo-aside">Rather book a time with us? <a href="https://cal.com/camplicity/30min" target="_blank" rel="noopener noreferrer">Book a demo</a></p>
         </div>
     </section>
 
@@ -1509,14 +1542,14 @@
                     <a href="#features" class="footer-link">Features</a>
                     <a href="#about" class="footer-link">About</a>
                     <a href="#faq" class="footer-link">FAQs</a>
-                    <a href="#contact" class="footer-link">Contact</a>
+                    <a href="#contact-us" class="footer-link">Contact</a>
                 </div>
                 <div class="footer-col">
                     <h4 class="footer-col-heading">Legal</h4>
-                    <a href="https://app.camplify.app/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="footer-link">Privacy Policy</a>
-                    <a href="https://app.camplify.app/legal/website-terms" target="_blank" rel="noopener noreferrer" class="footer-link">Website Terms</a>
-                    <a href="https://app.camplify.app/legal/saas-terms" target="_blank" rel="noopener noreferrer" class="footer-link">SaaS Terms</a>
-                    <a href="https://app.camplify.app/legal/dpa" target="_blank" rel="noopener noreferrer" class="footer-link">DPA</a>
+                    <a href="/privacy-policy/" class="footer-link">Privacy Policy</a>
+                    <a href="/terms-of-use/" class="footer-link">Website Terms</a>
+                    <a href="/saas-terms/" class="footer-link">SaaS Terms</a>
+                    <a href="/dpa/" class="footer-link">DPA</a>
                 </div>
             </div>
         </div>
@@ -1543,12 +1576,12 @@
                 <a href="#faq" class="mobile-menu-link">FAQs</a>
             </nav>
             <div class="mobile-menu-ctas">
-                <a href="https://cal.com/camplicity/30min" class="mobile-cta-primary">Book a Demo &rsaquo;</a>
+                <a href="#contact" class="mobile-cta-primary">Let's Start &rsaquo;</a>
                 <a href="https://app.camplicity.app/" class="mobile-cta-secondary">Login</a>
             </div>
         </div>
     </div>
 
-    <script src="./main.js?v=10"></script>
+    <script src="./main.js?v=27"></script>
 </body>
 </html>
