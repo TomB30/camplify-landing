@@ -118,17 +118,15 @@ body {
     font-weight: 600;
     color: var(--primary);
     text-decoration: none;
-    border: 1.5px solid var(--primary);
+    border: none;
     box-sizing: border-box;
     height: 36px;
-    transition: all 0.2s ease;
+    transition: color 0.2s ease, background 0.2s ease;
 }
 
 .nav-btn-secondary:hover {
     color: var(--primary);
-    border-color: var(--primary);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(56, 183, 254, 0.25);
+    background: rgba(56, 183, 254, 0.08);
 }
 
 .nav-btn-primary {
@@ -4059,6 +4057,10 @@ body {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+.request-type[hidden] {
+    display: none;
 }
 
 .request-type {

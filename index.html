@@ -139,7 +139,7 @@
               "name": "How do I get started with Camplicity?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Start a free 14-day trial, or leave your details and we'll get back to you shortly. We review every request personally and email you within 24 hours. For a trial, share your camp name and we'll email you a link to create an account."
+                "text": "Leave your details and we'll get back to you shortly. We review every request personally and email you within 24 hours."
               }
             },
             {
@@ -1444,7 +1444,7 @@
                         <span class="faq-icon"></span>
                     </summary>
                     <div class="faq-answer">
-                        <p>Start a free 14-day trial, or leave your details and we'll get back to you shortly. We review every request personally and email you within 24 hours. For a trial, share your camp name and we'll email you a link to create an account.</p>
+                        <p>Leave your details and we'll get back to you shortly. We review every request personally and email you within 24 hours.</p>
                     </div>
                 </details>
 
@@ -1456,7 +1456,7 @@
         <div id="contact-us" class="contact-anchor" aria-hidden="true"></div>
         <div class="contact-section-inner">
         <h2 class="section-title">Let’s get your camp started</h2>
-        <p class="contact-subtitle">Start a free 14-day trial, or leave your details and we'll reach out.<br>We review every request personally and reply within 24 hours.</p>
+        <p class="contact-subtitle">Leave your details and we'll reach out.<br>We review every request personally and reply within 24 hours.</p>
         <div class="contact-form">
             <div class="success-message" id="contactSuccess" data-persist="true">
                 <div class="success-icon">
@@ -1467,21 +1467,22 @@
                 </div>
                 <div class="success-content">
                     <div class="success-title" id="formSuccessTitle">Thanks!</div>
-                    <div class="success-text" id="formSuccessText">We'll take a quick look at your request and email you a link to start your trial within 24 hours.</div>
+                    <div class="success-text" id="formSuccessText">We'll review your message and email you within 24 hours.</div>
                 </div>
             </div>
             <form id="contactForm" action="https://formspree.io/f/xlgggvna" method="POST" data-success="contactSuccess">
-                <input type="hidden" name="request_type" id="requestType" value="14-day trial">
-                <input type="hidden" name="_subject" id="formSubject" value="14-day trial request">
+                <input type="hidden" name="request_type" id="requestType" value="contact">
+                <input type="hidden" name="_subject" id="formSubject" value="New message from the website">
                 <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-                <div class="request-type" role="radiogroup" aria-label="How would you like to start?">
+                <!-- Trial option hidden for now. Unhide this group and check "trial" to offer it again. -->
+                <div class="request-type" role="radiogroup" aria-label="How would you like to start?" hidden>
                     <label class="request-type-trial">
-                        <input type="radio" name="type" value="trial" checked>
+                        <input type="radio" name="type" value="trial">
                         <span>Try it free for 14 days</span>
                     </label>
                     <label class="request-type-questions">
-                        <input type="radio" name="type" value="contact">
+                        <input type="radio" name="type" value="contact" checked>
                         <span>Contact Us</span>
                     </label>
                 </div>
@@ -1498,25 +1499,25 @@
                     <label for="campName">Camp name *</label>
                     <input type="text" id="campName" name="camp_name" autocomplete="organization" required>
                 </div>
-                <div class="form-conditional" id="messageField" aria-hidden="true">
+                <div class="form-conditional is-open" id="messageField" aria-hidden="false">
                     <div class="form-conditional-inner">
                         <div class="form-group">
                             <label for="message">Message *</label>
-                            <textarea id="message" name="message" placeholder="What would you like to know?" disabled></textarea>
+                            <textarea id="message" name="message" placeholder="What would you like to know?" required></textarea>
                         </div>
                     </div>
                 </div>
-                <div class="form-conditional is-open" id="termsField">
+                <div class="form-conditional" id="termsField" aria-hidden="true">
                     <div class="form-conditional-inner">
                         <div class="terms-agree">
-                            <input type="checkbox" id="agreeTerms" name="agreed_to_saas_terms" value="yes" required aria-label="I agree to the SaaS Terms">
+                            <input type="checkbox" id="agreeTerms" name="agreed_to_saas_terms" value="yes" disabled aria-label="I agree to the SaaS Terms">
                             <label for="agreeTerms">I agree to the</label>
                             <a href="/saas-terms/" data-terms-version="2026-09-18" target="_blank" rel="noopener noreferrer">SaaS Terms</a>
                         </div>
                     </div>
                 </div>
                 <div class="submit-wrap">
-                    <button type="submit" class="submit-button is-locked" id="formSubmit" aria-disabled="true">Request my free trial</button>
+                    <button type="submit" class="submit-button" id="formSubmit" aria-disabled="false">Send message</button>
                     <p class="submit-terms-hint" id="submitTermsHint" role="tooltip">You must agree to the SaaS Terms</p>
                 </div>
                 <p class="form-legal">
@@ -1524,7 +1525,7 @@
                 </p>
             </form>
         </div>
-        <p class="demo-aside">Rather book a time with us? <a href="https://cal.com/camplicity/30min" target="_blank" rel="noopener noreferrer">Book a demo</a></p>
+        <!-- <p class="demo-aside">Rather book a time with us? <a href="https://cal.com/camplicity/demo" target="_blank" rel="noopener noreferrer">Book a demo</a></p> -->
         </div>
     </section>
 
